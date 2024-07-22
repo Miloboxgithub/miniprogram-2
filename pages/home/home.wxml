@@ -1,0 +1,69 @@
+
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+</swiper>
+<!-- <view  class="logo">
+    <image  src="" mode="aspectFit"></image>
+
+</view> -->
+<view class="container1">
+  <view class="item" bindtap="navigate" data-url="/pages/data/data" >
+    <view></view>
+    <image class="item-img" src="../../asset/6866493.png"></image>
+    <text class="item-text">数据监测1</text>
+    <view></view>
+  </view>
+  <view class="item" bindtap="navigate" data-url="/pages/data2/data2" >
+    <view></view>
+    <image class="item-img" src="../../asset/8072854.webp"></image>
+    <text class="item-text ">数据监测2</text>
+    <view></view>
+  </view>
+
+  <view class="item" bindtap="navigate" data-url="/pages/data3/data3" >
+    <view></view>
+    <image class="item-img" src="../../asset/2515286.webp"></image>
+    <text class="item-text">数据监测3</text>
+    <view></view>
+  </view>
+
+  <view class="item" bindtap="navigate" data-url="/pages/data4/data4" >
+    <view></view>
+    <image class="item-img" src="../../asset/7401592.webp"></image>
+    <text class="item-text">数据监测4</text>
+    <view></view>
+  </view>
+  <view class="item" bindtap="navigate" data-url="/pages/weather/weather" >
+    <view></view>
+    <image class="item-img" src="../../asset/648198.webp"></image>
+    <text class="item-text">天气状况</text>
+    <view></view>
+  </view>
+  <view class="item" bindtap="navigate" data-url="/pages/operation/operation">
+    <view></view>
+    <image class="item-img" src="../../asset/10228352.webp"></image>
+    <text class="item-text">设备状态</text>
+    <view></view>
+  </view>
+</view>
+<!-- <view class="textshow">
+<view class="textmain ">
+<view class="text-center text-black text-bold cuIcon-ellipse text-xxl text-center text-shadow text-gray">花蕾期</view>
+<view class="cuIcon-ellipse text-xxl">温度控制：确保夜间温度在8-12℃，白天在18-22℃，以促进花芽分化。</view>
+<view class="cuIcon-ellipse text-xxl">土壤湿度：维持在最大持水量的70%左右，避免过湿或过干。</view>
+<view class="cuIcon-ellipse text-xxl">土壤pH值：保持在5.5-6.5，以确保养分的有效吸收。
+光照管理：提供短日照条件，光照强度约30,000-40,000 lux，时长10-12小时。</view>
+<view class="cuIcon-ellipse text-xxl">空气湿度：控制在40%-60%，减少病害发生。
+花期：</view>
+<view class="cuIcon-ellipse text-xxl">温度控制：夜间温度保持在10-16℃，白天在20-24℃，以支持花朵的开放和授粉。</view>
+<view class="cuIcon-ellipse text-xxl">土壤湿度：提高至最大持水量的70%-80%，以满足开花期间的水分需求。</view>
+<view class="cuIcon-ellipse text-xxl">土壤pH值：维持在5.5-6.5。</view>
+<view class="cuIcon-ellipse text-xxl">光照管理：需要长日照条件，光照强度至少30,000-50,000 lux，时长12-15小时。</view>
+<view class="cuIcon-ellipse text-xxl">空气湿度：控制在70%-80%，有助于花粉的传播和授粉。</view>
+</view>
+  </view> -->

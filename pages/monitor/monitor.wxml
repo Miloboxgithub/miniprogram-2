@@ -1,0 +1,5 @@
+<view class="container">
+  <!-- <web-view src="https://milomo.voin.ink/index.html"></web-view> -->
+  <web-view src="https://120.237.20.252:50035/"></web-view>
+
+</view>

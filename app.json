@@ -1,0 +1,79 @@
+{
+  
+  "pages": [
+    "pages/home/home",
+    "pages/me/me",
+    "pages/operation/operation",
+    "pages/data/data",
+    "pages/data2/data2",
+    "pages/data3/data3",
+    "pages/data4/data4",
+    "pages/monitor/monitor",
+    "pages/warning/warning",
+    
+    "pages/weather/weather",
+    "pages/decision/decision"
+  ],
+  "subPackages":[{
+    "root":"packageA",
+    "pages": [
+      "pages/line/index",
+      "pages/lineset/lineset",
+      "pages/lux/lux",
+      "pages/COO/COO"
+    ]
+  }],
+  "requiredPrivateInfos":[
+    "choosePoi","getLocation","chooseAddress"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "草莓监控系统",
+    "navigationBarBackgroundColor": "#ecebeb"
+  },
+  "usingComponents": {
+    "cu-custom": "/style/colorui/components/cu-custom",
+    "van-switch": "/miniprogram_npm/@vant/weapp/switch/index"
+  },
+  "tabBar": {
+    "color": "#9e9e9e",
+    "selectedColor": "#444444",
+    "backgroundColor": "#ecebeb",
+    "position": "bottom",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "asset/home.png",
+        "selectedIconPath": "asset/home_(1).png"
+    },
+      {
+        "pagePath": "pages/monitor/monitor",
+        "text": "监控",
+        "iconPath": "asset/monitor1.png",
+        "selectedIconPath": "asset/dashboard-monitor.png"
+      },
+      {
+        "pagePath": "pages/decision/decision",
+        "text": "决策",
+        "iconPath": "asset/decision1.png",
+        "selectedIconPath": "asset/condition-alt.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "asset/user.png",
+        "selectedIconPath": "asset/user (1).png"
+      }
+    ]
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序天气接口的效果展示"
+    }
+}
+}

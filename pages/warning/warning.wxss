@@ -1,0 +1,18 @@
+.container {
+  height: 400px;
+  width: 100%;
+
+}
+
+.a1 {
+  height: 100%;
+  width: 100%;
+}
+
+.a2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  font-weight: 700;
+}

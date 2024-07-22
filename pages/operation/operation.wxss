@@ -1,0 +1,82 @@
+.container {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.th {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 23px;
+  font-weight: 700;
+  color: #333;
+}
+.divider {
+  width: 230rpx;
+  margin-left: 133px;
+  height: 3px;
+  background-color: #29984e;
+  margin-top: 5px;
+  margin-bottom: 17px;
+}
+
+.device-status {
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  margin: 10px 10px 10px 10px;
+  border: 1px solid #c9c6c6;
+  box-shadow: 2px 4px 4px #7a7a7a;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.right image{
+  width: 130rpx;
+  height: 130rpx;
+  /* 设置元素为块级元素 */
+display: block;
+margin-right: 15rpx;
+}
+.device-name {
+  
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+.cen{
+  margin-left: 5px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.status {
+  font-size: 17px;
+  color: #ffffff;
+  margin-left: 15px;
+}
+.idd{
+  margin-left: 5px;
+  font-size: 18px;
+  color: #32abdf;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+.report-time {
+  margin-left: 5px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+.kaiguan{
+  margin-left: 10px;
+}
+.shang{
+  display: flex;
+
+}

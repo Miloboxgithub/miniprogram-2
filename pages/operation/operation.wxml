@@ -1,0 +1,99 @@
+<view class="header">
+<view class="th">执行器设备</view>
+<view class="divider"></view>
+</view>
+<!-- lux -->
+<view class="device-status" >
+    <view class="left">
+      <view class="idd">
+        设备ID:3
+      </view>
+    <view class="cen">
+        <view class="device-name">光照仪</view>
+        <view class="status shadow cu-btn round {{checked1===false?'bg-red':'bg-green'}}">{{checked1===false?'关闭':'开启'}}</view>
+    <van-switch class="kaiguan"  checked="{{ checked1 }}" bind:change="onChange1" />
+    </view>
+    <view class="report-time">最后通讯时间：{{Time1}}</view>
+    </view>
+    <view class="right">
+      <image src="../../asset/light.webp" mode="" />
+        
+    </view>
+  </view>
+  <!-- wu -->
+  <view class="device-status">
+    <view class="left">
+      <view class="idd">
+        设备ID:2
+      </view>
+    <view class="cen">
+        <view class="device-name">雾化片</view>
+        <view class="status shadow cu-btn round {{checked2===false?'bg-red':'bg-green'}}">{{checked2===false?'关闭':'开启'}}</view>
+    <van-switch class="kaiguan"  checked="{{ checked2 }}" bind:change="onChange2" />
+    </view>
+    <view class="report-time">最后通讯时间：{{Time2}}</view>
+    </view>
+    <view class="right">
+      <image src="../../asset/wu.webp" mode="" />
+        
+    </view>
+  </view>
+
+<!-- fan -->
+  <view class="device-status">
+    <view class="left">
+      <view class="idd">
+        设备ID:3
+      </view>
+      
+    <view class="cen">
+        <view class="device-name">风机</view>
+    <view class="status shadow cu-btn round {{checked3===false?'bg-red':'bg-green'}}">{{checked3===false?'关闭':'开启'}}</view>
+    <van-switch class="kaiguan"  checked="{{ checked3 }}" bind:change="onChange3" />
+    </view>
+    <view class="report-time">最后通讯时间：{{Time3}}</view>
+    </view>
+    <view class="right">
+      <image src="../../asset/fan.webp" mode="" />
+        
+    </view>
+  </view>
+
+<!-- water -->
+  <view class="device-status">
+    <view class="left">
+      <view class="idd">
+        设备ID:2
+      </view>
+    <view class="cen">
+        <view class="device-name">水泵</view>
+        <view class="status shadow cu-btn round {{checked4===false?'bg-red':'bg-green'}}">{{checked4===false?'关闭':'开启'}}</view>
+    <van-switch class="kaiguan"  checked="{{ checked4 }}" bind:change="onChange4" />
+    </view>
+    <view class="report-time">最后通讯时间：{{Time4}}</view>
+    </view>
+    <view class="right">
+      <image src="../../asset/water.webp" mode="" />
+        
+    </view>
+  </view>
+<!-- peng -->
+  <view class="device-status">
+    <view class="left">
+      <view class="idd">
+        设备ID:1
+      </view>
+    <view class="cen">
+        <view class="device-name">大棚</view>
+        <view class="status shadow cu-btn round {{checked5===false?'bg-red':'bg-green'}}">{{checked5===false?'关闭':'开启'}}</view>
+    <van-switch class="kaiguan"  checked="{{ checked5 }}" bind:change="onChange5" />
+    </view>
+    <view class="report-time">最后通讯时间：{{Time5}}</view>
+    </view>
+    <view class="right">
+      <image src="../../asset/peng.webp" mode="" />
+        
+    </view>
+  </view>
+
+
