@@ -10,26 +10,22 @@
     "pages/data4/data4",
     "pages/monitor/monitor",
     "pages/warning/warning",
-    
+    "pages/line/index",
+    "pages/lineset/lineset",
+    "pages/lux/lux",
+    "pages/COO/COO",
     "pages/weather/weather",
-    "pages/decision/decision"
+    "pages/decision/decision",
+    "pages/chat/chat"
   ],
-  "subPackages":[{
-    "root":"packageA",
-    "pages": [
-      "pages/line/index",
-      "pages/lineset/lineset",
-      "pages/lux/lux",
-      "pages/COO/COO"
-    ]
-  }],
   "requiredPrivateInfos":[
     "choosePoi","getLocation","chooseAddress"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "草莓监控系统",
-    "navigationBarBackgroundColor": "#ecebeb"
+    
+    "navigationBarTitleText": "草莓监测系统",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#7bc08c"
   },
   "usingComponents": {
     "cu-custom": "/style/colorui/components/cu-custom",
@@ -75,5 +71,20 @@
     "scope.userLocation": {
       "desc": "你的位置信息将用于小程序天气接口的效果展示"
     }
+},
+"network": {
+  "request":[
+    "https://mdoihsg.voin.ink/",
+    "https://api.chatanywhere.tech/v1/chat/completions"
+  ],
+  "domain": [
+    {
+      "stage": "develop",
+      "request": "https://mdoihsg.voin.ink",
+      "uploadFile": "https://mdoihsg.voin.ink",
+      "downloadFile": "https://mdoihsg.voin.ink",
+      "webSocket": "wss://mdoihsg.voin.ink"
+    }
+  ]
 }
 }

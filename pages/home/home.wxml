@@ -1,4 +1,5 @@
-
+<view class="backk">
+<!-- </view> -->
 <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
   <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
     <view class="swiper-item">
@@ -8,49 +9,73 @@
   </swiper-item>
 </swiper>
 <!-- <view  class="logo">
+
     <image  src="" mode="aspectFit"></image>
 
 </view> -->
+
+
+      
+
 <view class="container1">
-  <view class="item" bindtap="navigate" data-url="/pages/data/data" >
-    <view></view>
-    <image class="item-img" src="../../asset/6866493.png"></image>
+  <view class="card1 item" bindtap="navigate" data-url="/pages/data/data" >
+    <view class="bg"></view>
+    <image class="item-img" src="../../asset/3571775.png"></image>
     <text class="item-text">数据监测1</text>
-    <view></view>
+    <view class="blob"></view>
   </view>
-  <view class="item" bindtap="navigate" data-url="/pages/data2/data2" >
-    <view></view>
-    <image class="item-img" src="../../asset/8072854.webp"></image>
+  <view class="card1 item" bindtap="navigate" data-url="/pages/data2/data2" >
+    <view class="bg"></view>
+    <image class="item-img" src="../../asset/6678348.png"></image>
     <text class="item-text ">数据监测2</text>
-    <view></view>
+    <view class="blob"></view>
   </view>
 
-  <view class="item" bindtap="navigate" data-url="/pages/data3/data3" >
-    <view></view>
-    <image class="item-img" src="../../asset/2515286.webp"></image>
+  <view class="card1 item" bindtap="navigate" data-url="/pages/data3/data3" >
+    <view class="bg"></view>
+    <image class="item-img" src="../../asset/9092482.png"></image>
     <text class="item-text">数据监测3</text>
-    <view></view>
+    <view class="blob"></view>
   </view>
 
-  <view class="item" bindtap="navigate" data-url="/pages/data4/data4" >
-    <view></view>
-    <image class="item-img" src="../../asset/7401592.webp"></image>
+  <view class="card1 item" bindtap="navigate" data-url="/pages/data4/data4" >
+    <view class="bg"></view>
+    <image class="item-img" src="../../asset/11902567.png"></image>
     <text class="item-text">数据监测4</text>
-    <view></view>
+    <view class="blob"></view>
   </view>
-  <view class="item" bindtap="navigate" data-url="/pages/weather/weather" >
+  <!-- <view class="item2" bindtap="navigate" data-url="/pages/weather/weather" >
     <view></view>
-    <image class="item-img" src="../../asset/648198.webp"></image>
+    <image class="item-img" src="../../asset/648198.png"></image>
     <text class="item-text">天气状况</text>
     <view></view>
-  </view>
-  <view class="item" bindtap="navigate" data-url="/pages/operation/operation">
+  </view> -->
+
+  <!-- <view class="item2" bindtap="navigate" data-url="/pages/operation/operation">
     <view></view>
-    <image class="item-img" src="../../asset/10228352.webp"></image>
+    <image class="item-img" src="../../asset/10228352.png"></image>
     <text class="item-text">设备状态</text>
     <view></view>
+  </view> -->
+</view>
+<view class="card"  bindtap="navigate" data-url="/pages/weather/weather">
+  <view class="card-info">
+    
+    <!-- <p class="title">Magic Card</p> -->
+    <image class="item-img1" src="../../asset/648198.png"></image>
+    <text class=" title">天   气   状   况</text>
   </view>
 </view>
+<view class="card"  bindtap="navigate" data-url="/pages/operation/operation">
+  <view class="card-info">
+    
+    <!-- <p class="title">Magic Card</p> -->
+    <image class="item-img1" src="../../asset/10228352.png"></image>
+    <text class=" title">设   备   状   态</text>
+  </view>
+</view>
+</view>
+
 <!-- <view class="textshow">
 <view class="textmain ">
 <view class="text-center text-black text-bold cuIcon-ellipse text-xxl text-center text-shadow text-gray">花蕾期</view>

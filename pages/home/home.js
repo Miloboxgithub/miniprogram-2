@@ -5,31 +5,31 @@ Page({
     swiperList: [{
       id: 0,
       type: 'image',
-      url: 'https://cdn.pixabay.com/photo/2017/05/11/19/44/fresh-fruits-2305192_1280.jpg'
+      url: '../../asset/微信图片_202407241452481.jpg'
     }, {
       id: 1,
         type: 'image',
-        url: 'https://cdn.pixabay.com/photo/2017/01/31/09/30/raspberries-2023404_640.jpg',
+        url: '../../asset/微信图片_20240724145112.jpg',
     }, {
       id: 2,
       type: 'image',
-      url: 'https://cdn.pixabay.com/photo/2017/05/07/19/32/strawberry-2293337_640.jpg'
+      url: 'https://s2.loli.net/2024/07/24/do5YqeVHJt72DsE.jpg'
     }, {
       id: 3,
       type: 'image',
-      url: 'https://cdn.pixabay.com/photo/2020/09/16/13/54/raspberries-5576401_640.jpg'
+      url: 'https://s2.loli.net/2024/07/24/q9ZTo53HxXFtEYn.jpg'
     }, {
       id: 4,
       type: 'image',
-      url: 'https://cdn.pixabay.com/photo/2022/08/05/21/28/strawberries-7367633_640.jpg'
+      url: 'https://s2.loli.net/2024/07/24/x5DhcB6WMjYiLal.jpg'
     }, {
       id: 5,
       type: 'image',
-      url: 'https://cdn.pixabay.com/photo/2016/10/31/18/14/dessert-1786311_640.jpg'
+      url: 'https://s2.loli.net/2024/07/24/G5PMkDICJHgaO64.jpg'
     }, {
       id: 6,
       type: 'image',
-      url: 'https://cdn.pixabay.com/photo/2012/06/21/00/48/fruits-50423_640.jpg'
+      url: 'https://s2.loli.net/2024/07/24/ZWgqyHQGX1CAMvi.jpg'
     }],
     
   },

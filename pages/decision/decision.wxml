@@ -1,2 +1,27 @@
-<!--pages/decision/decision.wxml-->
-<text>pages/decision/decision.wxml</text>
+<view class="page-container">
+  <view class="header">
+    <text class="title solid-bottom text-xl padding">欢迎来到决策页面</text>
+  </view>
+  <!-- ∧∨ -->
+  <view class="content"  bindtap="navigate" data-url="/pages/chat/chat"><view class="box-header">Chat</view></view>
+  <view class="content">
+  <view class="box-header" bindtap="toggle">decide{{iszhan===false?'▼':'▲'}}</view>
+    <rich-text nodes="{{articleContent}}" class="cu-item text-center text-shadow text-black solid-bottom text-lg padding" wx:if="{{iszhan}}"></rich-text>
+  </view>
+  <view class="content">
+  <view class="box-header" bindtap="toggle1">land1{{iszhan1===false?'▼':'▲'}}</view>
+    <rich-text nodes="{{articleContent1}}" class="cu-item text-center text-shadow text-black solid-bottom text-lg padding" wx:if="{{iszhan1}}"></rich-text>
+  </view>
+  <view class="content">
+  <view class="box-header" bindtap="toggle2">land2{{iszhan2===false?'▼':'▲'}}</view>
+    <rich-text nodes="{{articleContent2}}" class="cu-item text-center text-shadow text-black solid-bottom text-lg padding" wx:if="{{iszhan2}}"></rich-text>
+  </view>
+  <view class="content">
+  <view class="box-header" bindtap="toggle3">land3{{iszhan3===false?'▼':'▲'}}</view>
+    <rich-text nodes="{{articleContent3}}" class="cu-item text-center text-shadow text-black solid-bottom text-lg padding" wx:if="{{iszhan3}}"></rich-text>
+  </view>
+  <view class="content">
+  <view class="box-header" bindtap="toggle4">land4{{iszhan4===false?'▼':'▲'}}</view>
+    <rich-text nodes="{{articleContent4}}" class="cu-item text-center text-shadow text-black solid-bottom text-lg padding" wx:if="{{iszhan4}}"></rich-text>
+  </view>
+</view>

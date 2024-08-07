@@ -43,6 +43,7 @@ Page({
     let that = this
     const entityType = 'DEVICE';
     //const entityId = '71771400-1106-11ef-add2-fd19fcae8edb';
+    
     const entityId = '03b31be0-43eb-11ef-add2-fd19fcae8edb';
     let token = wx.getStorageSync('token');
     wx.request({
@@ -77,13 +78,14 @@ Page({
         'Authorization': `Bearer ${token}`
       },
       success(res) {
-        let a = +res.data.CO2_data[0].value
-        let b = a.toFixed(2)
-        //console.log(a,b)
-        that.setData({
-          CO2_data: b,
+        // console.log(res)
+        // let a = +res.data.CO2_data[0].value
+        // let b = a.toFixed(2)
+        // //console.log(a,b)
+        // that.setData({
+        //   //CO2_data: b,
 
-        })
+        // })
         wx.hideLoading()
       },
       fail(err) {

@@ -1,7 +1,7 @@
 <!--pages/shoplist/shoplist.wxml-->
 <view class="shop-item" bindtap="navigate" data-url="/pages/line/index" >
     <view class="thumb item">
-        <image src="../../asset/12525049.jpg" mode=""/>
+        <image src="../../asset/12525049.png" mode=""/>
           
     </view>
     <view class="info item">
@@ -17,7 +17,7 @@
 </view>
 <view class="shop-item" bindtap="navigate" data-url="/pages/line/index" >
     <view class="thumb item">
-        <image class="" src="../../asset/10398539.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        <image class="" src="../../asset/10398539.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
           
     </view>
     <view class="info item">
@@ -32,7 +32,7 @@
 </view>
 <view class="shop-item" bindtap="navigate" data-url="/pages/lineset/lineset" >
     <view class="thumb item">
-        <image class="" src="../../asset/15968674.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        <image class="" src="../../asset/15968674.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
           
     </view>
     <view class="info item">
@@ -47,7 +47,7 @@
 </view>
 <view class="shop-item"  bindtap="navigate" data-url="/pages/lineset/lineset">
     <view class="thumb item">
-        <image class="" src="../../asset/6454983.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        <image class="" src="../../asset/6454983.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
           
     </view>
     <view class="info item">
@@ -62,7 +62,7 @@
 </view>
 <view class="shop-item"  bindtap="navigate" data-url="/pages/lux/lux">
     <view class="thumb item">
-        <image class="" src="../../asset/1720093329470.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        <image class="" src="../../asset/1720093329470.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
           
     </view>
     <view class="info item">
@@ -77,7 +77,7 @@
 </view>
 <view class="shop-item"  bindtap="navigate" data-url="/pages/COO/COO">
     <view class="thumb item">
-        <image class="" src="../../asset/9306849.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        <image class="" src="../../asset/9306849.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
           
     </view>
     <view class="info item">

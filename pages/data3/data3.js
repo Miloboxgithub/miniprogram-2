@@ -43,7 +43,7 @@ Page({
     let that = this
     const entityType = 'DEVICE';
     const entityId = '71771400-1106-11ef-add2-fd19fcae8edb';
-
+    //const ID1='14b05580-43ef-11ef-add2-fd19fcae8edb'
     let token = wx.getStorageSync('token');
     wx.request({
       url: `https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/${entityType}/${entityId}/values/timeseries`,
@@ -79,7 +79,7 @@ Page({
       success(res) {
         console.log(res.data)
         that.setData({
-          CO2_data:res.data.CO2[0].value,
+          //CO2_data:res.data.CO2[0].value,
 
         })
         wx.hideLoading()

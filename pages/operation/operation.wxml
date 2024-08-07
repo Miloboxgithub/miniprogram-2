@@ -11,12 +11,12 @@
     <view class="cen">
         <view class="device-name">光照仪</view>
         <view class="status shadow cu-btn round {{checked1===false?'bg-red':'bg-green'}}">{{checked1===false?'关闭':'开启'}}</view>
-    <van-switch class="kaiguan"  checked="{{ checked1 }}" bind:change="onChange1" />
+    <!-- <van-switch class="kaiguan"  checked="{{ checked1 }}" bind:change="onChange1" /> -->
     </view>
     <view class="report-time">最后通讯时间：{{Time1}}</view>
     </view>
     <view class="right">
-      <image src="../../asset/light.webp" mode="" />
+      <image src="../../asset/light.png" mode="" />
         
     </view>
   </view>
@@ -29,12 +29,12 @@
     <view class="cen">
         <view class="device-name">雾化片</view>
         <view class="status shadow cu-btn round {{checked2===false?'bg-red':'bg-green'}}">{{checked2===false?'关闭':'开启'}}</view>
-    <van-switch class="kaiguan"  checked="{{ checked2 }}" bind:change="onChange2" />
+    <!-- <van-switch class="kaiguan"  checked="{{ checked2 }}" bind:change="onChange2" /> -->
     </view>
     <view class="report-time">最后通讯时间：{{Time2}}</view>
     </view>
     <view class="right">
-      <image src="../../asset/wu.webp" mode="" />
+      <image src="../../asset/wu.png" mode="" />
         
     </view>
   </view>
@@ -49,12 +49,12 @@
     <view class="cen">
         <view class="device-name">风机</view>
     <view class="status shadow cu-btn round {{checked3===false?'bg-red':'bg-green'}}">{{checked3===false?'关闭':'开启'}}</view>
-    <van-switch class="kaiguan"  checked="{{ checked3 }}" bind:change="onChange3" />
+    <!-- <van-switch class="kaiguan"  checked="{{ checked3 }}" bind:change="onChange3" /> -->
     </view>
     <view class="report-time">最后通讯时间：{{Time3}}</view>
     </view>
     <view class="right">
-      <image src="../../asset/fan.webp" mode="" />
+      <image src="../../asset/fan.png" mode="" />
         
     </view>
   </view>
@@ -68,12 +68,12 @@
     <view class="cen">
         <view class="device-name">水泵</view>
         <view class="status shadow cu-btn round {{checked4===false?'bg-red':'bg-green'}}">{{checked4===false?'关闭':'开启'}}</view>
-    <van-switch class="kaiguan"  checked="{{ checked4 }}" bind:change="onChange4" />
+    <!-- <van-switch class="kaiguan"  checked="{{ checked4 }}" bind:change="onChange4" /> -->
     </view>
     <view class="report-time">最后通讯时间：{{Time4}}</view>
     </view>
     <view class="right">
-      <image src="../../asset/water.webp" mode="" />
+      <image src="../../asset/water.png" mode="" />
         
     </view>
   </view>
@@ -86,12 +86,12 @@
     <view class="cen">
         <view class="device-name">大棚</view>
         <view class="status shadow cu-btn round {{checked5===false?'bg-red':'bg-green'}}">{{checked5===false?'关闭':'开启'}}</view>
-    <van-switch class="kaiguan"  checked="{{ checked5 }}" bind:change="onChange5" />
+    <!-- <van-switch class="kaiguan"  checked="{{ checked5 }}" bind:change="onChange5" /> -->
     </view>
     <view class="report-time">最后通讯时间：{{Time5}}</view>
     </view>
     <view class="right">
-      <image src="../../asset/peng.webp" mode="" />
+      <image src="../../asset/peng.png" mode="" />
         
     </view>
   </view>

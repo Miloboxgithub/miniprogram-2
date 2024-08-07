@@ -6,7 +6,7 @@ page {
 /* 设置背景颜色 */
 .top-bg {
   height: 200rpx;
-  background-color: #a5455a;
+  background-color: #7bc08c;
 }
  
 /* 圆角盒子 */

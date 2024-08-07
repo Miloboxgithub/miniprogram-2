@@ -97,8 +97,10 @@ Page({
     
     let that=this
     const token = wx.getStorageSync('token');
+    const entityType = 'DEVICE';
+    const entityId = '71771400-1106-11ef-add2-fd19fcae8edb';
     wx.request({
-      url: 'http://www.aiotcomm.com.cn:19527/api/plugins/telemetry/DEVICE/71771400-1106-11ef-add2-fd19fcae8edb/values/timeseries?deviceProfileId=896d996f-fd63-47ca-8017-57da84711df6&organizationId=70d64505-6367-423e-83fc-44a9d25d9185&keys=lux_data&agg=NONE&limit=7&startTs=1717171200000&endTs=1722009599000&_t=1720179867835',
+      url: `https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/${entityType}/${entityId}/values/timeseries?keys=lux_data&limit=7&startTs=1718208000000&endTs=1781285384219`,
       method: 'GET',
       header: {
         'content-type': 'application/x-www-form-urlencoded',

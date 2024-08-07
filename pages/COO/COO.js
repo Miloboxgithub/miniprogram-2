@@ -96,8 +96,10 @@ Page({
 getOption: function () {
   let that=this
   const token = wx.getStorageSync('token');
+  const entityId='166f1ad0-2ca9-11ef-add2-fd19fcae8edb'
+  const entityType = 'DEVICE';
   wx.request({
-    url: 'http://www.aiotcomm.com.cn:19527/api/plugins/telemetry/DEVICE/166f1ad0-2ca9-11ef-add2-fd19fcae8edb/values/timeseries?deviceProfileId=27b95d3a-0697-4714-ba9e-685c59cbb054&organizationId=70d64505-6367-423e-83fc-44a9d25d9185&keys=CO2_data&agg=NONE&limit=7&startTs=1717171200000&endTs=1725811199000&_t=1720187894693',
+    url: `https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/${entityType}/${entityId}/values/timeseries?keys=CO2_data&limit=7&startTs=1718208000000&endTs=1781285384219`,
     method: 'GET',
     header: {
       'content-type': 'application/x-www-form-urlencoded',

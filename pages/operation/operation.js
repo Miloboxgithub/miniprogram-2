@@ -1,6 +1,15 @@
+const app = getApp();
 Page({
   onLoad(op) {
-    this.getstatus()
+    app.fetchToken()
+    setTimeout(() => {
+      this.getstatus()
+    }, 1000);
+    const genxin=()=>{
+      this.getstatus
+    }
+    setInterval(genxin,5000)
+   
   },
   data: {
     deviceId: 1234567,
@@ -44,8 +53,10 @@ Page({
   getstatus: function () {
     let that = this;
     const token = wx.getStorageSync('token');
+    const entityType = 'DEVICE';
+    const ID='1ecdf330-2890-11ef-add2-fd19fcae8edb'
     wx.request({
-      url: 'http://www.aiotcomm.com.cn:19527/api/plugins/telemetry/DEVICE/1ecdf330-2890-11ef-add2-fd19fcae8edb/values/timeseries?deviceProfileId=3e94a884-ece7-4604-9982-77d7729ff51e&organizationId=70d64505-6367-423e-83fc-44a9d25d9185&keys=device_flag&agg=NONE&limit=7&startTs=1718208000000&endTs=1722182399000&_t=1721285840325',
+      url: `https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/${entityType}/${ID}/values/timeseries?keys=device_flag&limit=20&startTs=1718208000000&endTs=1781285384219`,
       data: {},
       header: {
         'content-type': 'application/x-www-form-urlencoded',
@@ -55,6 +66,7 @@ Page({
       dataType: 'json',
       responseType: 'text',
       success: (res) => {
+        console.log(res)
         //console.log('yes', that.getTime(res.data.device_flag[0].ts));
         let source = res.data.device_flag
         let datas = {}

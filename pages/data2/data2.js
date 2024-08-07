@@ -67,6 +67,7 @@ Page({
         console.error('失败', err);
       }
     });
+    
     const ID2='d17507c0-43ee-11ef-add2-fd19fcae8edb'
     wx.request({
       url: `https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/${entityType}/${ID2}/values/timeseries?limit=7`,
@@ -77,7 +78,7 @@ Page({
         'Authorization': `Bearer ${token}`
       },
       success(res) {
-        console.log(res.data)
+        console.log('hh',res.data)
         // let a = +res.data.CO2_data.value
         // let b = a.toFixed(2)
         // //console.log(a,b)
@@ -85,6 +86,10 @@ Page({
         //   CO2_data: b,
 
         // })
+        that.setData({
+          //CO2_data:res.data.CO2[0].value,
+
+        })
         wx.hideLoading()
       },
       fail(err) {
