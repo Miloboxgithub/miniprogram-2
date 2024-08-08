@@ -14,11 +14,11 @@ Page({
   data: {
     deviceId: 1234567,
     fanStatus: '关闭',
-    Time1: '2024-05-27 11:11:48',
-    Time2: '2024-05-27 11:11:48',
-    Time3: '2024-05-27 11:11:48',
-    Time4: '2024-05-27 11:11:48',
-    Time5: '2024-05-27 11:11:48',
+    Time1: '',
+    Time2: '',
+    Time3: '',
+    Time4: '',
+    Time5: '',
     checked1: false,
     checked2: false,
     checked3: false,
@@ -29,6 +29,13 @@ Page({
     this.setData({
       checked1: detail
     })
+    //console.log(this.checked1,detail)
+    if(detail){
+      this.poststatus(1)
+    }
+    else{
+      this.poststatus(0)
+    }
   },
   onChange2({ detail }) {
     this.setData({
@@ -121,5 +128,49 @@ Page({
     let t = y + '-' + m + '-' + d + ' ' + h + ':' + i + ':' + s;
     return t;
 
+  },
+  poststatus: function (op) {
+    // 控制泵的函数
+    function pump1(i) {
+      const deviceApiUrl = "https://www.aiotcomm.com.cn:18888/api/plugins/rpc/oneway/63720cd0-548f-11ef-add2-fd19fcae8edb";
+      const open = { "persistent": "true", "method": "methodThingskit", "params": { "pump1": 1 } };
+      const close = { "persistent": "true", "method": "methodThingskit", "params": { "pump1": 0 } };
+      let data;
+      const token = wx.getStorageSync('token');
+      if (i === 1) {
+        data = JSON.stringify(open); // 使用 JSON.stringify() 来替代 json.dumps()
+      } else if (i === 0) {
+        data = JSON.stringify(close);
+      }
+    
+      
+        const headers = {
+          // "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0",
+          "Content-Type": "application/json;charset=UTF-8",
+          "Authorization": `Bearer ${token}`
+        };
+    
+        wx.request({
+          url: deviceApiUrl,
+          method: 'POST',
+          data: data,
+          header: headers,
+          success: (res) => {
+            if (res.statusCode === 200) {
+              console.log("设备命令已成功发送");
+            } else {
+              console.error(`请求失败: ${res.statusCode}`);
+            }
+            console.log(res.data);
+          },
+          fail: (err) => {
+            console.error("Error controlling pump:", err);
+          }
+        });
+     
+    }
+
+// 调用 pump1 函数来控制泵
+pump1(op); // 用 1 来开启泵，用 0 来关闭泵
   }
 });

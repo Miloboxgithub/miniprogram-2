@@ -1,5 +1,10 @@
+<!-- pages/operation/operation.wxml -->
+
 <view class="container">
-<image src="../../asset/微信图片_20240710162729.jpg" class="a1"/>
+  <label class="switch">
+    <switch type="switch" checked="{{switchState}}" bindchange="handleSwitchChange" class="toggle" />
+    <view class="slider" style="background-color:{{switchState ? 'var(--active-color)' : 'var(--inactive-color)'}}"></view>
+    <view class="card-side"></view>
+  </label>
+  <view class="status">开关状态：{{switchState ? '开启' : '关闭'}}</view>
 </view>
-<view class="a2">
-<text >叶斑症</text></view>

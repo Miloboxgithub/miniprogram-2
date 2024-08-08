@@ -24,16 +24,20 @@
 }
 
 .device-status {
+  position: relative;
   background-color: rgb(255, 255, 255);
   padding: 5px;
-  margin: 10px 10px 10px 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 7px;
+
   border: 1px solid #c9c6c6;
   box-shadow: 2px 4px 4px #7a7a7a;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  
 }
 .right image{
   width: 130rpx;
@@ -51,13 +55,14 @@ margin-right: 15rpx;
 .cen{
   margin-left: 5px;
   display: flex;
-  justify-content: left;
-  align-items: center;
+  /* justify-content: left; */
+  /* align-items: center; */
 }
 .status {
+  position: static;
   font-size: 17px;
   color: #ffffff;
-  margin-left: 15px;
+  margin-right: 30px;
 }
 .idd{
   margin-left: 5px;
@@ -79,4 +84,14 @@ margin-right: 15rpx;
 .shang{
   display: flex;
 
+}
+.igm{
+  z-index: -1;
+}
+.container1 {
+ 
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  padding: 5px;
+  
 }
