@@ -20,12 +20,16 @@ const genxin = () => {
 setInterval(genxin,10000)
   },
   refreshtu:function () {
+    wx.showLoading({
+      title: '数据加载中...',
+    })
     const timenow=new Date().getTime();
 
     this.setData({
       src1:'http://111.230.53.161:8080/picture_circle.jpg?v='+timenow,
       src2:'http://111.230.53.161:8080/picture_ill.jpg?v='+timenow
     })
+    wx.hideLoading()
   }
   
 })

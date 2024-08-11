@@ -1,23 +1,25 @@
 const app = getApp();
 Page({
   data: {
-    articleContent: '<p>这里是你的文章内容。你可以使用<p>标签来换行，<strong>加粗</strong>文本，<em>斜体</em>，<a href="#">链接</a>等等。</p>',
+    articleContent: '',
     articleContent1: '土地1:温度、湿度、土壤湿度和pH值都在适宜范围内，但土壤中氮含量略低，可适当施加氮肥。植株无病虫害，生长状况良好。',
     articleContent2: '土地2:温度、湿度、土壤湿度和pH值都在适宜范围内，但土壤中氮含量略低，可适当施加氮肥。植株有灰霉病，建议使用异菌脲、腐霉利、嘧霉胺、嘧菌酯、咯菌腈、嘧菌环胺等进行喷雾防治，每隔7-10天喷一次，连续喷2-3次。',
     articleContent3: '土地3:温度、湿度、土壤湿度和pH值都在适宜范围内，但土壤中磷含量略高，可适当减少磷肥的施用量。植株无病虫害，生长状况良好。',
     articleContent4: '土地4:温度、湿度、土壤湿度和pH值都在适宜范围内，但土壤中氮含量略高，可适当减少氮肥的施用量。植株无病虫害，生长状况良好。',
-    iszhan:false,
-    iszhan1:false,
+    iszhan:true,
+    iszhan1:true,
     iszhan2:false,
     iszhan3:false,
     iszhan4:false,
+    loadinga:false
   },
   onLoad: function() {
     // 页面加载时的逻辑
+    this.getText1();
     app.fetchToken()
-    setTimeout(() => {
-      this.getText();
-    }, 1000);
+    // setTimeout(() => {
+    //   this.getText();
+    // }, 1000);
     
   },
   getText:function () {
@@ -82,5 +84,37 @@ Page({
   },
   navigate: function (e) {
     wx.navigateTo({url: e.currentTarget.dataset.url});
+  },
+  getText1: function () {
+    let that=this
+    that.setData({
+      loadinga:true
+    })
+    wx.request({
+      url: 'http://111.230.53.161:8080/suggestion',//https://192.168.1.86:5000/suggestion
+      method: 'GET',
+      headers :{
+       
+        "Content-Type": "application/json"
+        
+    },
+
+      success(res) {
+        console.log('成功4',res.data);
+        that.setData({
+          articleContent:res.data,
+          loadinga:false
+        })
+        // wx.hideLoading()
+      },
+      fail(err) {
+        console.error('失败', err);
+      }
+      
+      
+    })
+  },
+  shuaxin: function () {
+    this.getText1()
   }
 });

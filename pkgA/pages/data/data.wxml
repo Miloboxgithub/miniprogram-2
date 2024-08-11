@@ -1,0 +1,92 @@
+<!--pages/shoplist/shoplist.wxml-->
+<view class="shop-item" bindtap="navigate" data-url="/pages/line/index" >
+    <view class="thumb item">
+        <image src="../../../asset/12525049.png" mode=""/>
+          
+    </view>
+    <view class="info item">
+        <text class="title1" selectable="false" space="false" decode="false">土壤温度
+        </text>
+          </view>
+          <view class="info item">
+            <text class="title2" selectable="false" space="false" decode="false">{{soild_temp}}
+        </text>
+        <view class="title3">°C</view>
+          </view>
+          
+</view>
+<view class="shop-item" bindtap="navigate" data-url="/pages/line/index" >
+    <view class="thumb item">
+        <image class="" src="../../../asset/10398539.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+          
+    </view>
+    <view class="info item">
+        <text class="title1" selectable="false" space="false" decode="false">土壤湿度
+        </text>
+          </view>
+          <view class="info item">
+            <text class="title2" selectable="false" space="false" decode="false">{{soild_hum}}
+        </text>
+        <view class="title3">%RH</view>
+          </view>
+</view>
+<view class="shop-item" bindtap="navigate" data-url="/pages/lineset/lineset" >
+    <view class="thumb item">
+        <image class="" src="../../../asset/15968674.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+          
+    </view>
+    <view class="info item">
+        <text class="title1" selectable="false" space="false" decode="false">空气湿度
+        </text>
+          </view>
+          <view class="info item">
+            <text class="title2" selectable="false" space="false" decode="false">{{env_hum}} 
+        </text>
+        <view class="title3">%RH</view>
+          </view>
+</view>
+<view class="shop-item"  bindtap="navigate" data-url="/pages/lineset/lineset">
+    <view class="thumb item">
+        <image class="" src="../../../asset/6454983.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+          
+    </view>
+    <view class="info item">
+        <text class="title1" selectable="false" space="false" decode="false">空气温度
+        </text>
+          </view>
+          <view class="info item">
+            <text class="title2" selectable="false" space="false" decode="false">{{env_temp}} 
+        </text>
+        <view class="title3">°C</view>
+          </view>
+</view>
+<view class="shop-item"  bindtap="navigate" data-url="/pages/lux/lux">
+    <view class="thumb item">
+        <image class="" src="../../../asset/1720093329470.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+          
+    </view>
+    <view class="info item">
+        <text class="title1" selectable="false" space="false" decode="false">光照强度
+        </text>
+          </view>
+          <view class="info item">
+            <text class="title2" selectable="false" space="false" decode="false">{{lux_data}} 
+        </text>
+        <view class="title3">lux</view>
+          </view>
+</view>
+<view class="shop-item"  bindtap="navigate" data-url="/pages/COO/COO">
+    <view class="thumb item">
+        <image class="" src="../../../asset/9306849.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+          
+    </view>
+    <view class="info item">
+        <text class="title1" selectable="false" space="false" decode="false">CO2浓度
+        </text>
+          </view>
+          <view class="info item">
+            <text class="title2" selectable="false" space="false" decode="false">{{CO2_data}} 
+        </text>
+        <view class="title3">ppm</view>
+          </view>
+</view>

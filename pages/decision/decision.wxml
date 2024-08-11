@@ -1,6 +1,8 @@
 <view class="page-container">
   <view class="header">
-    <text class="title solid-bottom text-xl padding">欢迎来到决策页面</text>
+    <view><text class="title solid-bottom text-xl padding">欢迎来到决策页面</text></view>
+    <view>
+      <button role="button" aria-disabled="false" class="cu-btn round bg-blue" bindtap="shuaxin">刷新</button></view>
   </view>
   <!-- ∧∨ -->
   <view class="content"  bindtap="navigate" data-url="/pages/chat/chat"><view class="box-header">Chat</view></view>
@@ -8,7 +10,7 @@
   <view class="box-header" bindtap="toggle">decide{{iszhan===false?'▼':'▲'}}</view>
     <rich-text nodes="{{articleContent}}" class="cu-item text-center text-shadow text-black solid-bottom text-lg padding" wx:if="{{iszhan}}"></rich-text>
   </view>
-  <view class="content">
+  <!-- <view class="content">
   <view class="box-header" bindtap="toggle1">land1{{iszhan1===false?'▼':'▲'}}</view>
     <rich-text nodes="{{articleContent1}}" class="cu-item text-center text-shadow text-black solid-bottom text-lg padding" wx:if="{{iszhan1}}"></rich-text>
   </view>
@@ -23,5 +25,20 @@
   <view class="content">
   <view class="box-header" bindtap="toggle4">land4{{iszhan4===false?'▼':'▲'}}</view>
     <rich-text nodes="{{articleContent4}}" class="cu-item text-center text-shadow text-black solid-bottom text-lg padding" wx:if="{{iszhan4}}"></rich-text>
+  </view> -->
+  <view class="terminal-loader" wx:if="{{loadinga}}">
+  <view class="terminal-header">
+    <view class="terminal-title">Status</view>
+    <view class="terminal-controls">
+      <view class="control close"></view>
+      <view class="control minimize"></view>
+      <view class="control maximize"></view>
+    </view>
+  </view>
+  <view class="content1">
+    <view class="text">AI Loading...</view>
   </view>
 </view>
+</view>
+
+

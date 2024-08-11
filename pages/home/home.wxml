@@ -21,7 +21,7 @@
       
 
 <view class="container1">
-  <view class="card1 item" bindtap="navigate" data-url="/pages/data/data" >
+  <view class="card1 item" bindtap="navigate" data-url="/pkgA/pages/data/data" >
     <view class="bg"></view>
     <image class="item-img" src="../../asset/3571775.png"></image>
     <text class="item-text">数据监测1</text>
