@@ -1,7 +1,7 @@
-
+<!-- https://raw.githubusercontent.com/weilanwl/ColorUI/master/demo/images/wave.gif -->
 <view class="backk" >
 <view class="shang text-black text-bold">农业监测系统</view>
-<image src="https://raw.githubusercontent.com/weilanwl/ColorUI/master/demo/images/wave.gif" mode="scaleToFill" style="height:110px" role="img" class="gif-black response imgk"></image>
+<image src="../../asset/wave.gif" mode="scaleToFill" style="height:110px" role="img" class="gif-black response imgk"></image>
 <!-- </view> -->
 <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
   <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">

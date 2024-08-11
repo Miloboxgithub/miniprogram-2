@@ -58,6 +58,11 @@ margin-right: 15rpx;
   /* justify-content: left; */
   /* align-items: center; */
 }
+.xia{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .status {
   position: static;
   font-size: 17px;
@@ -78,9 +83,9 @@ margin-right: 15rpx;
   color: #666;
   margin-bottom: 10px;
 }
-.kaiguan{
+/* .kaiguan{
   margin-left: 10px;
-}
+} */
 .shang{
   display: flex;
 
@@ -95,3 +100,4 @@ margin-right: 15rpx;
   padding: 5px;
   
 }
+

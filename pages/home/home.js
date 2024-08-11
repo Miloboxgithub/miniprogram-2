@@ -9,7 +9,7 @@ Page({
     }, {
       id: 1,
         type: 'image',
-        url: '../../asset/微信图片_20240724145112.jpg',
+        url: 'https://s2.loli.net/2024/07/24/x5DhcB6WMjYiLal.jpg',
     }, {
       id: 2,
       type: 'image',
@@ -21,7 +21,7 @@ Page({
     }, {
       id: 4,
       type: 'image',
-      url: 'https://s2.loli.net/2024/07/24/x5DhcB6WMjYiLal.jpg'
+      url: '../../asset/微信图片_20240724145112.jpg'
     }, {
       id: 5,
       type: 'image',

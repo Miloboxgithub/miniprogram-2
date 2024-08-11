@@ -1,12 +1,5 @@
 <view class="container">
-  <!-- <text class="bt">jiankonghuamian</text> -->
-  <!-- <web-view src="http://127.0.0.1:5500/index.html?app=live&stream=test&type=play"></web-view> -->
-  <!-- <web-view src="https://mdoihsg.voin.ink/"/> -->
-  <!-- <view class="jian">
-  <web-view src="http://120.237.20.252:50035/webrtc"></web-view></view> -->
-  <!-- <view class="jian">
-  <web-view src="https://www.baidu.com/"></web-view></view> -->
-<video class="photo" src="http://120.237.20.252:50035/webrtc?app=live&stream=test&type=play" controls></video>
+
 <view class="zimg">
       <view class="llimg"><image mode="aspectFill" class="iimg" src="{{src1}}" /></view>
     <view class="rrimg"><image mode="aspectFill" class="iimg" src="{{src2}}" /></view>
