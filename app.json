@@ -4,15 +4,9 @@
     "pages/home/home",
     "pages/me/me",
     "pages/operation/operation",
-    "pages/data/data",
-    "pages/data2/data2",
-    "pages/data3/data3",
-    "pages/data4/data4",
+    
     "pages/monitor/monitor",
-    "pages/line/index",
-    "pages/lineset/lineset",
-    "pages/lux/lux",
-    "pages/COO/COO",
+    
     "pages/weather/weather",
     "pages/decision/decision",
     "pages/chat/chat"
@@ -27,7 +21,18 @@
     "pages/data2/data2",
     "pages/data3/data3",
     "pages/data4/data4",
-        "pages/lux/lux"
+    "pages/line/index",
+    "pages/lineset/lineset",
+    "pages/lux/lux",
+    "pages/COO/COO",
+    "ec-canvas/ec-canvas"
+      ]
+    },
+    {
+      "root": "pkgB",
+      "name":"p2",
+      "pages": [
+        "pages/game/game"
       ]
     }
   ],

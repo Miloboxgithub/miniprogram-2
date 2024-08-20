@@ -2,13 +2,13 @@
 <scroll-view class="cu-chat" style="overflow-y: scroll;" id="chatList" scroll-y="true" scroll-into-view="{{scrollIntoView}}">
 
 <view wx:for="{{messages}}" wx:key="index" class="cu-item {{item.type === 'right' ? 'self' : ''}}" >
-  <view class="cu-avatar radius" wx:if="{{item.type === 'left'}}" style="background-image:url(https://tse2-mm.cn.bing.net/th/id/OIP-C.OTqjOW2I-11mg43Ki0q5wwHaHa?w=167&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7);" ></view>
+  <view class="cu-avatar radius" wx:if="{{item.type === 'left'}}" style="background-image:url(https://cdn-icons-png.flaticon.com/256/8752/8752030.png); border-radius: 50%;" ></view>
   <view class="main">
       <view class="content  shadow {{item.type === 'right' ? 'bg-green' : ''}}"  bindtap="onDelete" data-index="{{index}}">
         <text selectable="true">{{item.content}}</text>
       </view>
     </view>
-    <view class="cu-avatar radius" wx:if="{{item.type === 'right'}}" style="background-image:url(https://tse1-mm.cn.bing.net/th/id/OIP-C.iSPMUvTQCATIJfkwMOn5SwHaHZ?w=186&h=185&c=7&r=0&o=5&dpr=1.5&pid=1.7);"></view>
+    <view class="cu-avatar radius" wx:if="{{item.type === 'right'}}" style="background-image:url(https://tse1-mm.cn.bing.net/th/id/OIP-C.iSPMUvTQCATIJfkwMOn5SwHaHZ?w=186&h=185&c=7&r=0&o=5&dpr=1.5&pid=1.7);border-radius: 50%;"></view>
     <view class="date">{{item.time}}</view>
 </view>
 
@@ -38,7 +38,8 @@
 
 
 </scroll-view>
-
+<view class="cu-load bg-grey loading" wx:if="{{loadings}}">
+</view>
 <view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
   <view class="action">
     <text class="cuIcon-sound text-grey"></text>

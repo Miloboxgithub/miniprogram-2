@@ -1,66 +1,104 @@
-// pkgA/pages/data4/data4.js
+// pages/data/data.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    CO2_data: '0',
+    soild_hum: '0',
+    soild_temp: '0',
+    lux_data: '0',
+    env_hum: '0',
+    env_temp: '0',
+
 
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad(options) {
+    
+    app.fetchToken()
+
+
+    setTimeout(() => {
+      this.getDatas()
+    }, 1000);
+    const genxin = () => {
+      this.getDatas()
+    }
+    //setInterval(genxin, 5000);
+
+
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  navigate: function (e) {
+    wx.navigateTo({ url: e.currentTarget.dataset.url });
   },
+  getDatas: function (cd) {
+    wx.showLoading({
+      title: '数据加载中...',
+    })
+    let that = this
+    const entityType = 'DEVICE';
+    //const entityId = '71771400-1106-11ef-add2-fd19fcae8edb';
+    
+    const entityId = '03b31be0-43eb-11ef-add2-fd19fcae8edb';
+    let token = wx.getStorageSync('token');
+    wx.request({
+      url: `https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/${entityType}/${entityId}/values/timeseries`,
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'Authorization': `Bearer ${token}`
+      },
+      success(res) {
+        console.log('成功2');
+        that.setData({
+          soild_hum: res.data.soild_hum_data[0].value,
+          soild_temp: res.data.soild_temp_data[0].value,
+          env_temp: res.data.env_temp_data[0].value,
+          env_hum: res.data.env_hum_data[0].value,
+          lux_data: res.data.lux_data[0].value,
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
+        })
+      },
+      fail(err) {
+        console.error('失败', err);
+      }
+    });
+    const ID2='2b6886d0-43ef-11ef-add2-fd19fcae8edb'
+    wx.request({
+      url: `https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/${entityType}/${ID2}/values/timeseries`,
 
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'Authorization': `Bearer ${token}`
+      },
+      success(res) {
+        // console.log(res)
+        // let a = +res.data.CO2_data[0].value
+        // let b = a.toFixed(2)
+        // //console.log(a,b)
+        // that.setData({
+        //   //CO2_data: b,
+
+        // })
+        wx.hideLoading()
+      },
+      fail(err) {
+
+      }
+    });
+    cd&&cd()
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh() {
 
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
+    this.getDatas(() => {
+      wx.stopPullDownRefresh()
+    })
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
 })

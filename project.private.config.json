@@ -10,8 +10,8 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/try/try",
-          "pathName": "pages/try/try",
+          "name": "pkgB/pages/game/game",
+          "pathName": "pkgB/pages/game/game",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -130,5 +130,6 @@
         }
       ]
     }
-  }
+  },
+  "libVersion": "3.4.10"
 }

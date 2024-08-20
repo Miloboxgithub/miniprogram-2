@@ -27,21 +27,21 @@
     <text class="item-text">数据监测1</text>
     <view class="blob"></view>
   </view>
-  <view class="card1 item" bindtap="navigate" data-url="/pages/data2/data2" >
+  <view class="card1 item" bindtap="navigate" data-url="/pkgA/pages/data2/data2" >
     <view class="bg"></view>
     <image class="item-img" src="../../asset/6678348.png"></image>
     <text class="item-text ">数据监测2</text>
     <view class="blob"></view>
   </view>
 
-  <view class="card1 item" bindtap="navigate" data-url="/pages/data3/data3" >
+  <view class="card1 item" bindtap="navigate" data-url="/pkgA/pages/data3/data3" >
     <view class="bg"></view>
     <image class="item-img" src="../../asset/9092482.png"></image>
     <text class="item-text">数据监测3</text>
     <view class="blob"></view>
   </view>
 
-  <view class="card1 item" bindtap="navigate" data-url="/pages/data4/data4" >
+  <view class="card1 item" bindtap="navigate" data-url="/pkgA/pages/data4/data4" >
     <view class="bg"></view>
     <image class="item-img" src="../../asset/11902567.png"></image>
     <text class="item-text">数据监测4</text>

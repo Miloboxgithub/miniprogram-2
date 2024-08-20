@@ -23,7 +23,7 @@ for (var i = 1; i < 3; ++i) {
     //this.getstatus()
   },
   data: {
-    checked0:false,
+    checked0:true,
     checked1: false,
     checked2: false,
     checked3: false,

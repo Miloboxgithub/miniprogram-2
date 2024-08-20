@@ -2,6 +2,6 @@
 
 <view class="zimg">
       <view class="llimg"><image mode="aspectFill" class="iimg" src="{{src1}}" /></view>
-    <view class="rrimg"><image mode="aspectFill" class="iimg" src="{{src2}}" /></view>
+    <view class="rrimg" ><image mode="aspectFill" class="iimg" src="{{src2}}" /></view>
     </view> 
 </view>

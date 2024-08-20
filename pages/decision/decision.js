@@ -1,7 +1,7 @@
 const app = getApp();
 Page({
   data: {
-    articleContent: '',
+    articleContent: " ",
     articleContent1: '土地1:温度、湿度、土壤湿度和pH值都在适宜范围内，但土壤中氮含量略低，可适当施加氮肥。植株无病虫害，生长状况良好。',
     articleContent2: '土地2:温度、湿度、土壤湿度和pH值都在适宜范围内，但土壤中氮含量略低，可适当施加氮肥。植株有灰霉病，建议使用异菌脲、腐霉利、嘧霉胺、嘧菌酯、咯菌腈、嘧菌环胺等进行喷雾防治，每隔7-10天喷一次，连续喷2-3次。',
     articleContent3: '土地3:温度、湿度、土壤湿度和pH值都在适宜范围内，但土壤中磷含量略高，可适当减少磷肥的施用量。植株无病虫害，生长状况良好。',
@@ -15,7 +15,7 @@ Page({
   },
   onLoad: function() {
     // 页面加载时的逻辑
-    this.getText1();
+    //this.getText1();
     app.fetchToken()
     // setTimeout(() => {
     //   this.getText();

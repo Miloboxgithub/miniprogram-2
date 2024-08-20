@@ -3,7 +3,8 @@ Page({
   data: {
     messages: [
     ],
-    scrollIntoView: ''
+    scrollIntoView: '',
+    loadings:false
   },
   onLoad(){
     const savedMessages = wx.getStorageSync('savedMessages');
@@ -14,7 +15,6 @@ Page({
       });
     }
     else{
-      console.log(223232,)
       this.setData({
         messages:[
           { type: 'left', content: '你好！有什么可以帮助到你吗', time:  this.getCurrentTime()}]
@@ -70,7 +70,9 @@ Page({
     // 更新页面数据，以便 `input` 的值能够实时更新
     this.setData({
       inputVal: event.detail.value
+
     });
+
   },
   getCurrentTime() {
     const date = new Date();
@@ -109,7 +111,7 @@ Page({
   //___________---------------------------------------------
   async sendNewMessage() {
     const that = this
-    const message = this.data.inputVal;
+    const message = this.data.inputVal; 
 
     if (!message) {
       return;
@@ -118,31 +120,41 @@ Page({
       inputVal: '',
       messages: [...this.data.messages, 
       { type: 'right',  content: message,time: this.getCurrentTime()}],
-      scrollIntoView: 'msg-' + (this.data.messages.length - 1)
+      loadings:true
+      
     });
+    this.setData({
+      scrollIntoView: 'msg-' + (this.data.messages.length - 1)
+    })
      const response = await wx.request({
-      url: 'https://api.chatanywhere.tech/v1/chat/completions',
+      url: 'http://milomio.online:8080/questioning',//https://api.chatanywhere.tech/v1/chat/completions-----http://111.230.53.161:8080/questioning
       method: 'POST',
+      // data: {
+      //   "model": "gpt-4o-mini",
+      //   "messages": [{
+      //     "role": "user",
+      //     "content": message
+      //   }]
+      // },
       data: {
-        "model": "gpt-4o-mini",
-        "messages": [{
-          "role": "user",
-          "content": message
-        }]
+        "query":JSON.stringify(message)
       },
       header: {
-        'Authorization': 'Bearer sk-BBABBQz4qnVtUBIHTh9HBd3bPO9rOKTjSfU19zzvJjcndBeu',
+        // 'Authorization': 'Bearer sk-BBABBQz4qnVtUBIHTh9HBd3bPO9rOKTjSfU19zzvJjcndBeu',
         'Content-Type': 'application/json'
       },
       success: (res) => {
-        const reply = res.data.choices[0].message.content;
-
+        console.log(res)
+        //const reply = res.data.choices[0].message.content;
+        const reply = res.data;
         this.setData({
           inputVal: '',
+          loadings:false,
           messages: [...this.data.messages, 
           
           {  type: 'left',content: reply,  time: this.getCurrentTime()},],
           scrollIntoView: 'msg-' + (this.data.messages.length - 1)
+
         });
         wx.setStorageSync('savedMessages', this.data.messages);
         that.scrollToBottom();

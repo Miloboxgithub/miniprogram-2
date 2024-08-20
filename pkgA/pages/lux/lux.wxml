@@ -1,2 +1,3 @@
-<!--pkgA/pages/lux/lux.wxml-->
-<text>pkgA/pages/lux/lux.wxml</text>
+<view class="line">
+  <ec-canvas style="width: 100%; height: 450px;" id="myechart" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view>

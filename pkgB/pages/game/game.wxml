@@ -1,0 +1,69 @@
+<view class="container">
+<view class="tabbers">
+  <view class="original" 
+        bindtouchstart="touchStart"
+        bindtouchmove="touchMove"
+        bindtouchend="touchEnd"
+        style="position: absolute; text-align: center; width: 100rpx; height:50rpx;background: rgb(100, 180, 100);display: block;left:{{posX}}px;top:{{posY}}px;">
+        pump
+  </view>
+  <view wx:if="{{copyVisible}}" 
+        class="copy"
+        bindtouchmove="copyTouchMove"
+        bindtouchend="copyTouchEnd"
+        style="position: absolute; text-align: center; width: 100rpx; height:50rpx;background: rgb(100, 180, 100);display: block;left:{{copyPosX}}px;top:{{copyPosY}}px;">
+        pump
+  </view>
+  <!-- 1 -->
+  <view class="original" 
+        bindtouchstart="touchStart1"
+        bindtouchmove="touchMove1"
+        bindtouchend="touchEnd1"
+        style="position: absolute; text-align: center; width: 100rpx; height:50rpx;background: rgb(89, 125, 224);display: block;left:{{posX1}}px;top:{{posY1}}px;">
+        fan
+  </view>
+  <view wx:if="{{copyVisible1}}" 
+        class="copy"
+        bindtouchmove="copyTouchMove"
+        bindtouchend="copyTouchEnd"
+        style="position: absolute; text-align: center; width: 100rpx; height:50rpx;background: rgb(89, 125, 224);display: block;left:{{copyPosX1}}px;top:{{copyPosY1}}px;">
+        fan
+  </view>
+  <!-- 2 -->
+  <view class="original" 
+        bindtouchstart="touchStart2"
+        bindtouchmove="touchMove2"
+        bindtouchend="touchEnd2"
+        style="position: absolute; text-align: center; width: 100rpx; height:50rpx;background: rgb(180, 100, 180);display: block;left:{{posX2}}px;top:{{posY2}}px;">
+        wuhuaqian
+  </view>
+  <view wx:if="{{copyVisible2}}" 
+        class="copy"
+        bindtouchmove="copyTouchMove"
+        bindtouchend="copyTouchEnd"
+        style="position: absolute; text-align: center; width: 100rpx; height:50rpx;background: rgb(180, 100, 180);display: block;left:{{copyPosX2}}px;top:{{copyPosY2}}px;">
+        wuhuapian
+  </view>
+  <!-- 3 -->
+  <view class="original" 
+        bindtouchstart="touchStart3"
+        bindtouchmove="touchMove3"
+        bindtouchend="touchEnd3"
+        style="position: absolute; text-align: center; width: 100rpx; height:50rpx;background: rgb(240, 236, 41);display: block;left:{{posX3}}px;top:{{posY3}}px;">
+        light
+  </view>
+  <view wx:if="{{copyVisible3}}" 
+        class="copy"
+        bindtouchmove="copyTouchMove"
+        bindtouchend="copyTouchEnd"
+        style="position: absolute; text-align: center; width: 100rpx; height:50rpx;background: rgb(240, 236, 41);display: block;left:{{copyPosX3}}px;top:{{copyPosY3}}px;">
+        light
+  </view>
+</view>
+  <view class="area">
+  <view class="item {{boxClass}}"></view>
+  <view class="item {{boxClass1}}"></view>
+  <view class="item {{boxClass2}}"></view>
+  <view class="item {{boxClass3}}"></view>
+  </view>
+</view>

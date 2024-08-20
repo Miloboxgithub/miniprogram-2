@@ -1,1 +1,10 @@
-/* pkgA/pages/lux/lux.wxss */
+/**app.wxss**/
+.line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #c3b3b3;
+  
+  padding-top: 30rpx;
+}

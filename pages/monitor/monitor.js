@@ -6,7 +6,11 @@ Page({
    */
   data: {
       src1:'',
-      src2:''
+      src2:'',
+      ziwidth:50,
+      ziheight:50,
+      op1:true,
+      op2:true
   },
 
   /**
@@ -30,6 +34,36 @@ setInterval(genxin,10000)
       src2:'http://111.230.53.161:8080/picture_ill.jpg?v='+timenow
     })
     wx.hideLoading()
+  },
+  changeda1:function () {
+    if(this.op1){
+    this.setData({
+      ziheight:150,
+      ziwidth:150,
+      op1:false
+    })}
+    else{
+      this.setData({
+        ziheight:50,
+        ziwidth:50,
+        op1:true
+      })
+    }
+  },
+  changeda2:function () {
+    if(this.op2){
+    this.setData({
+      ziheight:150,
+      ziwidth:150,
+      op1:false
+    })}
+    else{
+      this.setData({
+        ziheight:50,
+        ziwidth:50,
+        op1:true
+      })
+    }
   }
   
 })

@@ -21,7 +21,7 @@ Page({
     }, {
       id: 4,
       type: 'image',
-      url: '../../asset/微信图片_20240724145112.jpg'
+      url: 'https://cdn.pixabay.com/photo/2021/09/18/02/27/vietnam-6634082_640.jpg'
     }, {
       id: 5,
       type: 'image',
