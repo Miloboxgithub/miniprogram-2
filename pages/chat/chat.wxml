@@ -1,4 +1,4 @@
-<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText" >返回</view><view slot="content">AI问答</view></cu-custom>
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}"><view slot="backText" >返回</view><view slot="content">AI问答</view></cu-custom>
 <scroll-view class="cu-chat" style="overflow-y: scroll;" id="chatList" scroll-y="true" scroll-into-view="{{scrollIntoView}}">
 
 <view wx:for="{{messages}}" wx:key="index" class="cu-item {{item.type === 'right' ? 'self' : ''}}" >

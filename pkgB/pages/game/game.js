@@ -1,12 +1,13 @@
+const app = getApp();
 Page({
   data: {
       posX: 20, // 初始位置
       posY: 20, // 初始位置
-      posX1: 120, // 初始位置
+      posX1: 110, // 初始位置
       posY1: 20, // 初始位置
-      posX2: 220, // 初始位置
+      posX2: 200, // 初始位置
       posY2: 20, // 初始位置
-      posX3: 320, // 初始位置
+      posX3: 290, // 初始位置
       posY3: 20, // 初始位置
       copyVisible: false, // 复制件可见性
       copyVisible1: false,
@@ -31,9 +32,110 @@ Page({
       chaY3: 0, // 转换值Y
       boxClass: '',
       boxClass1: '',
-      boxClass2:''
+      boxClass2:'',
+      hew:100,
+      heh:100,
+      hew1:100,
+      heh1:100,
+      hew2:100,
+      heh2:100,
+      hew3:100,
+      heh3:100,
+      san:false,
+      san1:false,
+      san2:false,
+      san3:false,
+      show: false,
+      show1: false,
+      show2: false,
+      show3: false,
+    actions: [
+      {
+        name: '选项',
+      },
+      {
+        name: '选项',
+      },
+      {
+        name: '选项',
+        subname: '描述信息',
+        openType: 'share',
+      },
+    ],
+    actions1: [
+      {
+        name: '选项',
+      },
+      {
+        name: '选项',
+      },
+      {
+        name: '选项',
+        subname: '描述信息',
+        openType: 'share',
+      },
+    ],
+    actions2: [
+      {
+        name: '选项',
+      },
+      {
+        name: '选项',
+      },
+      {
+        name: '选项',
+        subname: '描述信息',
+        openType: 'share',
+      },
+    ],
+    actions3: [
+      {
+        name: '选项',
+      },
+      {
+        name: '选项',
+      },
+      {
+        name: '选项',
+        subname: '描述信息',
+        openType: 'share',
+      },
+    ],
   },
+onLoad(){
+  app.fetchToken()
+},
+onClose() {
+  this.setData({ show: false,
+    show1: false,
+    show2: false,
+    show3: false });
+  console.log(123)
+},
 
+onSelect(event) {
+  console.log(event.detail);
+},
+showch:function () {
+  this.setData({
+    show:true
+  })
+},
+showch1:function () {
+  this.setData({
+    show1:true
+  })
+},
+showch2:function () {
+  this.setData({
+    show2:true
+  })
+},
+showch3:function () {
+  this.setData({
+    show3:true
+  })
+},
   // 开始触摸
   touchStart: function (e) {
       console.log("== touchStart =="); // 拖动开始
@@ -50,7 +152,9 @@ Page({
           copyPosY: this.data.posY,
           touch: true,
           chaX: tranX,
-          chaY: tranY
+          chaY: tranY,
+          hew:120,
+          heh:120
       });
   },
   touchStart1: function (e) {
@@ -68,7 +172,9 @@ Page({
         copyPosY1: this.data.posY1,
         touch: true,
         chaX1: tranX,
-        chaY1: tranY
+        chaY1: tranY,
+        hew1:120,
+          heh1:120
     });
 },
 touchStart2: function (e) {
@@ -86,7 +192,9 @@ touchStart2: function (e) {
       copyPosY2: this.data.posY2,
       touch: true,
       chaX2: tranX,
-      chaY2: tranY
+      chaY2: tranY,
+      hew2:120,
+          heh2:120
   });
 },
 touchStart3: function (e) {
@@ -104,7 +212,9 @@ touchStart3: function (e) {
       copyPosY3: this.data.posY3,
       touch: true,
       chaX3: tranX,
-      chaY3: tranY
+      chaY3: tranY,
+      hew3:120,
+          heh3:120
   });
 },
 
@@ -114,9 +224,8 @@ touchStart3: function (e) {
       // e.touches[0] 内容就是触摸点的坐标值
       var new_posX = e.touches[0].pageX - this.data.chaX;
       var new_posY = e.touches[0].pageY - this.data.chaY;
-      console.log(" move new_posX: " + new_posX);
-      console.log(" move new_posY: " + new_posY);
-
+      // console.log(" move new_posX: " + new_posX);
+      // console.log(" move new_posY: " + new_posY);
       this.setData({
           posX: new_posX,
           posY: new_posY
@@ -167,36 +276,40 @@ touchMove3: function (e) {
       console.log("== touchEnd ==")
       if (!this.data.touch) return;
       if(parseInt(this.data.posY)>100&&parseInt(this.data.posY)<250&&parseInt(this.data.posX)<140){
-        console.log('hhfdhg')
         this.setData({
-          boxClass:'shake'
+          boxClass:'shake',
         })
       }
       if(parseInt(this.data.posY)>100&&parseInt(this.data.posY)<250&&parseInt(this.data.posX)>180&&parseInt(this.data.posX)<320){
         console.log('down')
         this.setData({
-          boxClass1:'zoom'
+          boxClass1:'shake'
         })
       }
       if(parseInt(this.data.posY)>280&&parseInt(this.data.posY)<430&&parseInt(this.data.posX)>0&&parseInt(this.data.posX)<140){
         this.setData({
-          boxClass2:'wobble'
+          boxClass2:'shake'
         })
       }
       if(parseInt(this.data.posY)>280&&parseInt(this.data.posY)<430&&parseInt(this.data.posX)>180&&parseInt(this.data.posX)<320){
         this.setData({
-          boxClass3:'rotate'
+          boxClass3:'shake'
         })
       }
       this.setData({
+        san:true,
           touch: false,
           chaX: 0,
           chaY: 0,
-          posX:20,
-          posY:20
+          
+          heh:100,
+          hew:100
       });
       setTimeout(() => {
         this.setData({
+          san:false,
+          posX:20,
+          posY:20,
           boxClass: '',
           boxClass1:'',
           boxClass2:'',
@@ -216,28 +329,32 @@ touchMove3: function (e) {
     if(parseInt(this.data.posY1)>100&&parseInt(this.data.posY1)<250&&parseInt(this.data.posX1)>180&&parseInt(this.data.posX1)<320){
       console.log('down')
       this.setData({
-        boxClass1:'zoom'
+        boxClass1:'shake'
       })
     }
     if(parseInt(this.data.posY1)>280&&parseInt(this.data.posY1)<430&&parseInt(this.data.posX1)>0&&parseInt(this.data.posX1)<140){
       this.setData({
-        boxClass2:'wobble'
+        boxClass2:'shake'
       })
     }
     if(parseInt(this.data.posY1)>280&&parseInt(this.data.posY1)<430&&parseInt(this.data.posX1)>180&&parseInt(this.data.posX1)<320){
       this.setData({
-        boxClass3:'rotate'
+        boxClass3:'shake'
       })
     }
     this.setData({
         touch: false,
         chaX1: 0,
         chaY1: 0,
-        posX1:120,
-        posY1:20
+        san1:true,
+        heh1:100,
+          hew1:100
     });
     setTimeout(() => {
       this.setData({
+        posX1:110,
+        posY1:20,
+        san1:false,
         boxClass: '',
         boxClass1:'',
         boxClass2:'',
@@ -257,28 +374,33 @@ touchEnd2: function (e) {
   if(parseInt(this.data.posY2)>100&&parseInt(this.data.posY2)<250&&parseInt(this.data.posX2)>180&&parseInt(this.data.posX2)<320){
     console.log('down')
     this.setData({
-      boxClass1:'zoom'
+      boxClass1:'shake'
     })
   }
   if(parseInt(this.data.posY2)>280&&parseInt(this.data.posY2)<430&&parseInt(this.data.posX2)>0&&parseInt(this.data.posX2)<140){
     this.setData({
-      boxClass2:'wobble'
+      boxClass2:'shake'
     })
   }
   if(parseInt(this.data.posY2)>280&&parseInt(this.data.posY2)<430&&parseInt(this.data.posX2)>180&&parseInt(this.data.posX2)<320){
     this.setData({
-      boxClass3:'rotate'
+      boxClass3:'shake'
     })
   }
   this.setData({
+    san2:true,
       touch: false,
       chaX2: 0,
       chaY2: 0,
-      posX2:220,
-      posY2:20
+      
+      heh2:100,
+          hew2:100
   });
   setTimeout(() => {
     this.setData({
+      san2:false,
+      posX2:200,
+      posY2:20,
       boxClass: '',
       boxClass1:'',
       boxClass2:'',
@@ -298,28 +420,32 @@ touchEnd3: function (e) {
   if(parseInt(this.data.posY3)>100&&parseInt(this.data.posY3)<250&&parseInt(this.data.posX3)>180&&parseInt(this.data.posX3)<320){
     console.log('down')
     this.setData({
-      boxClass1:'zoom'
+      boxClass1:'shake'
     })
   }
   if(parseInt(this.data.posY3)>280&&parseInt(this.data.posY3)<430&&parseInt(this.data.posX3)>0&&parseInt(this.data.posX3)<140){
     this.setData({
-      boxClass2:'wobble'
+      boxClass2:'shake'
     })
   }
   if(parseInt(this.data.posY3)>280&&parseInt(this.data.posY3)<430&&parseInt(this.data.posX3)>180&&parseInt(this.data.posX3)<320){
     this.setData({
-      boxClass3:'rotate'
+      boxClass3:'shake'
     })
   }
   this.setData({
       touch: false,
       chaX3: 0,
       chaY3: 0,
-      posX3:320,
-      posY3:20
+      san3:true,
+      heh3:100,
+          hew3:100
   });
   setTimeout(() => {
     this.setData({
+      posX3:290,
+      posY3:20,
+      san3:false,
       boxClass: '',
       boxClass1:'',
       boxClass2:'',
@@ -327,7 +453,141 @@ touchEnd3: function (e) {
     });
   }, 550); 
 },
+poststatus: function (op,ed) {
+  // 控制泵的函数
+  function pump1(i,ed) {
+    const deviceApiUrl = "https://www.aiotcomm.com.cn:18888/api/plugins/rpc/oneway/63720cd0-548f-11ef-add2-fd19fcae8edb";
+    const open = { "persistent": "true", "method": "methodThingskit", "params": { [ed]: 1 } };
+    const close = { "persistent": "true", "method": "methodThingskit", "params": { [ed]: 0 } };
+    let data;
+    const token = wx.getStorageSync('token');
+    if (i === 1) {
+      data = JSON.stringify(open); // 使用 JSON.stringify() 来替代 json.dumps()
+    } else if (i === 0) {
+      data = JSON.stringify(close);
+    }
+  
+    
+      const headers = {
+        // "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Authorization": `Bearer ${token}`
+      };
+  
+      wx.request({
+        url: deviceApiUrl,
+        method: 'POST',
+        data: data,
+        header: headers,
+        success: (res) => {
+          if (res.statusCode === 200) {
+            console.log("设备命令已成功发送");
+          } else {
+            console.error(`请求失败: ${res.statusCode}`);
+          }
+          console.log(res.data);
+        },
+        fail: (err) => {
+          console.error("Error controlling pump:", err);
+        }
+      });
+   
+  }
 
+// 调用 pump1 函数来控制泵
+pump1(op,ed); // 用 1 来开启泵，用 0 来关闭泵
+},
+poststatus1: function (op,ed) {
+  // 控制泵的函数
+  //console.log(op)
+  function pump1(i,ed) {
+    const deviceApiUrl = "https://www.aiotcomm.com.cn:18888/api/plugins/rpc/oneway/a5ac4170-5493-11ef-add2-fd19fcae8edb";
+    const open = { "persistent": "true", "method": "methodThingskit", "params": { [ed]:  i} };
+    const close = { "persistent": "true", "method": "methodThingskit", "params": { [ed]: i } };
+    let data;
+    const token = wx.getStorageSync('token');
+    if (i > 0) {
+      data = JSON.stringify(open); // 使用 JSON.stringify() 来替代 json.dumps()
+      //console.log('yes')
+    } else{
+      data = JSON.stringify(close);
+//console.log('no')
+    }
+  
+    
+      const headers = {
+        // "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Authorization": `Bearer ${token}`
+      };
+  
+      wx.request({
+        url: deviceApiUrl,
+        method: 'POST',
+        data: data,
+        header: headers,
+        success: (res) => {
+          if (res.statusCode === 200) {
+            console.log("设备命令已成功发送");
+          } else {
+            console.error(`请求失败: ${res.statusCode}`);
+          }
+          console.log(res.data);
+        },
+        fail: (err) => {
+          console.error("Error controlling pump:", err);
+        }
+      });
+   
+  }
+
+// 调用 pump1 函数来控制泵
+pump1(Number(op),ed); // 用 1 来开启泵，用 0 来关闭泵
+},
+poststatus0: function (op,ed) {
+  // 控制泵的函数
+  function pump1(i,ed) {
+    const deviceApiUrl = "https://www.aiotcomm.com.cn:18888/api/plugins/rpc/oneway/2cdae7b0-54a7-11ef-add2-fd19fcae8edb";
+    const open = { "persistent": "true", "method": "methodThingskit", "params": { [ed]: 1 } };
+    const close = { "persistent": "true", "method": "methodThingskit", "params": { [ed]: 0 } };
+    let data;
+    const token = wx.getStorageSync('token');
+    if (i === 1) {
+      data = JSON.stringify(open); // 使用 JSON.stringify() 来替代 json.dumps()
+    } else if (i === 0) {
+      data = JSON.stringify(close);
+    }
+  
+    
+      const headers = {
+        // "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Authorization": `Bearer ${token}`
+      };
+  
+      wx.request({
+        url: deviceApiUrl,
+        method: 'POST',
+        data: data,
+        header: headers,
+        success: (res) => {
+          if (res.statusCode === 200) {
+            console.log("设备命令已成功发送");
+          } else {
+            console.error(`请求失败: ${res.statusCode}`);
+          }
+          console.log(res.data);
+        },
+        fail: (err) => {
+          console.error("Error controlling pump:", err);
+        }
+      });
+   
+  }
+
+// 调用 pump1 函数来控制泵
+pump1(op,ed); // 用 1 来开启泵，用 0 来关闭泵
+},
   // 复制件的触摸移动
   copyTouchMove: function (e) {
       if (!this.data.copyVisible) return;

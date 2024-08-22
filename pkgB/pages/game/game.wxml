@@ -1,69 +1,120 @@
 <view class="container">
 <view class="tabbers">
-  <view class="original" 
+  <view class="original {{san?'puff-out-center':''}}" 
         bindtouchstart="touchStart"
         bindtouchmove="touchMove"
         bindtouchend="touchEnd"
-        style="position: absolute; text-align: center; width: 100rpx; height:50rpx;background: rgb(100, 180, 100);display: block;left:{{posX}}px;top:{{posY}}px;">
-        pump
+        
+        style="position: absolute; text-align: center; width: {{hew}}rpx; height:{{heh}}rpx;display: block;left:{{posX}}px;top:{{posY}}px;">
+        <image class="imgs" src="../../icon/水泵.png" mode=""/>
   </view>
   <view wx:if="{{copyVisible}}" 
         class="copy"
         bindtouchmove="copyTouchMove"
         bindtouchend="copyTouchEnd"
-        style="position: absolute; text-align: center; width: 100rpx; height:50rpx;background: rgb(100, 180, 100);display: block;left:{{copyPosX}}px;top:{{copyPosY}}px;">
-        pump
+        style="position: absolute; text-align: center; width: 100rpx; height:100rpx;display: block;left:{{copyPosX}}px;top:{{copyPosY}}px;">
+        <image class="imgs" src="../../icon/水泵.png" mode=""/>
   </view>
   <!-- 1 -->
-  <view class="original" 
+  <view class="original {{san1?'puff-out-center':''}}" 
         bindtouchstart="touchStart1"
         bindtouchmove="touchMove1"
         bindtouchend="touchEnd1"
-        style="position: absolute; text-align: center; width: 100rpx; height:50rpx;background: rgb(89, 125, 224);display: block;left:{{posX1}}px;top:{{posY1}}px;">
-        fan
+        style="position: absolute; text-align: center; width: {{hew1}}rpx; height:{{heh1}}rpx;display: block;left:{{posX1}}px;top:{{posY1}}px;">
+        <image class="imgs" src="../../icon/风扇.png" mode=""/>
   </view>
   <view wx:if="{{copyVisible1}}" 
         class="copy"
         bindtouchmove="copyTouchMove"
         bindtouchend="copyTouchEnd"
-        style="position: absolute; text-align: center; width: 100rpx; height:50rpx;background: rgb(89, 125, 224);display: block;left:{{copyPosX1}}px;top:{{copyPosY1}}px;">
-        fan
+        style="position: absolute; text-align: center; width: 100rpx; height:100rpx;display: block;left:{{copyPosX1}}px;top:{{copyPosY1}}px;">
+        <image class="imgs" src="../../icon/风扇.png" mode=""/>
   </view>
   <!-- 2 -->
-  <view class="original" 
+  <view class="original {{san2?'puff-out-center':''}}" 
         bindtouchstart="touchStart2"
         bindtouchmove="touchMove2"
         bindtouchend="touchEnd2"
-        style="position: absolute; text-align: center; width: 100rpx; height:50rpx;background: rgb(180, 100, 180);display: block;left:{{posX2}}px;top:{{posY2}}px;">
-        wuhuaqian
+        style="position: absolute; text-align: center; width: {{hew2}}rpx; height:{{heh2}}rpx;display: block;left:{{posX2}}px;top:{{posY2}}px;">
+        <image class="imgs" src="../../icon/喷雾.png" mode=""/>
   </view>
   <view wx:if="{{copyVisible2}}" 
         class="copy"
         bindtouchmove="copyTouchMove"
         bindtouchend="copyTouchEnd"
-        style="position: absolute; text-align: center; width: 100rpx; height:50rpx;background: rgb(180, 100, 180);display: block;left:{{copyPosX2}}px;top:{{copyPosY2}}px;">
-        wuhuapian
+        style="position: absolute; text-align: center; width: 100rpx; height:100rpx;display: block;left:{{copyPosX2}}px;top:{{copyPosY2}}px;">
+        <image class="imgs" src="../../icon/喷雾.png" mode=""/>
   </view>
   <!-- 3 -->
-  <view class="original" 
+  <view class="original {{san3?'puff-out-center':''}}" 
         bindtouchstart="touchStart3"
         bindtouchmove="touchMove3"
         bindtouchend="touchEnd3"
-        style="position: absolute; text-align: center; width: 100rpx; height:50rpx;background: rgb(240, 236, 41);display: block;left:{{posX3}}px;top:{{posY3}}px;">
-        light
+        style="position: absolute; text-align: center; width: {{hew3}}rpx; height:{{heh3}}rpx;display: block;left:{{posX3}}px;top:{{posY3}}px;">
+        <image class="imgs" src="../../icon/灯.png" mode=""/>
   </view>
   <view wx:if="{{copyVisible3}}" 
         class="copy"
         bindtouchmove="copyTouchMove"
         bindtouchend="copyTouchEnd"
-        style="position: absolute; text-align: center; width: 100rpx; height:50rpx;background: rgb(240, 236, 41);display: block;left:{{copyPosX3}}px;top:{{copyPosY3}}px;">
-        light
+        style="position: absolute; text-align: center; width: 100rpx; height:100rpx;display: block;left:{{copyPosX3}}px;top:{{copyPosY3}}px;">
+        <image class="imgs" src="../../icon/灯.png" mode=""/>
   </view>
 </view>
+
   <view class="area">
-  <view class="item {{boxClass}}"></view>
-  <view class="item {{boxClass1}}"></view>
-  <view class="item {{boxClass2}}"></view>
-  <view class="item {{boxClass3}}"></view>
+   
+  <view class="item card {{boxClass}}" style="background-image: linear-gradient(to right, #b1769f, #ebdce1);">
+
+
+      <image src="../../icon/草莓-01.png" class="imgg" bindtap="showch" mode=""/>
   </view>
+  <view class="item card {{boxClass1}}" style="background-image: linear-gradient(to right, #2196f3, #20c997);">
+    <image src="../../icon/草莓-01.png" class="imgg" bindtap="showch1" mode=""/>
+  </view>
+  <view class="item card {{boxClass2}}" style="background-image: linear-gradient(to right, #4caf50, #cddc39);">
+    <image src="../../icon/草莓-01.png" class="imgg" bindtap="showch2" mode=""/>
+  </view>
+  <view class="item card {{boxClass3}}" style="background-image: linear-gradient(to right, #ffeb3b, #ff9800);">
+    <image src="../../icon/草莓-01.png" class="imgg" bindtap="showch3" mode=""/>
+  </view>
+  </view>
+  
+  <van-action-sheet
+  show="{{show}}"
+  actions="{{ actions }}"
+  description="1号种植物"
+  cancel-text="取消"
+  bind:close="onClose"
+  bind:select="onSelect"
+bind:cancel="onClose"
+/>
+<van-action-sheet
+  show="{{show1}}"
+  actions="{{ actions1 }}"
+  description="2号种植物"
+  cancel-text="取消"
+  bind:close="onClose"
+  bind:select="onSelect"
+bind:cancel="onClose"
+/>
+<van-action-sheet
+  show="{{show2}}"
+  actions="{{ actions2 }}"
+  description="3号种植物"
+  cancel-text="取消"
+  bind:close="onClose"
+  bind:select="onSelect"
+bind:cancel="onClose"
+/>
+<van-action-sheet
+  show="{{show3}}"
+  actions="{{ actions3 }}"
+  description="4号种植物"
+  cancel-text="取消"
+  bind:close="onClose"
+  bind:select="onSelect"
+bind:cancel="onClose"
+/>
+
 </view>

@@ -9,14 +9,16 @@
   height: 100%;
   background: linear-gradient(
     45deg,
-    #3498db,
-    #2ecc71
+    #859c92,
+    #3ce482
   ); /* Gradient background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-  border-radius: 10px; /* Rounded corners */
+ 
   position: relative;
   overflow: hidden;
 }
+/* #3498db,
+    #2ecc71 */
 .page-container::before{
   content: "";
   position: absolute;
@@ -42,9 +44,7 @@
   display: flex;
   justify-content: space-between;
 }
-button{
-  
-}
+
 .title {
   font-size: 40rpx;
   color: #333;

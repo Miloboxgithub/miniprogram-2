@@ -13,14 +13,14 @@ for (var i = 1; i < 3; ++i) {
 }
 
     app.fetchToken()
-    // setTimeout(() => {
-    //   this.getstatus()
-    // }, 1000);
-    // const genxin=()=>{
-    //   this.getstatus
-    // }
-    // setInterval(genxin,5000)
-    //this.getstatus()
+    setTimeout(() => {
+      this.fetchValues()
+    }, 400);
+    const genxin=()=>{
+      this.fetchValues()
+    }
+    //setInterval(genxin,5000)
+    
   },
   data: {
     checked0:true,
@@ -494,5 +494,90 @@ pump1(op,ed); // 用 1 来开启泵，用 0 来关闭泵
 
 // 调用 pump1 函数来控制泵
 pump1(op,ed); // 用 1 来开启泵，用 0 来关闭泵
-  }
+  },
+  fetchValues: function () {
+    let that = this;
+    const token = wx.getStorageSync('token');
+    const urls = [
+      { url: pump1_url, key: 'pump1' },
+      { url: pump11_url, key: 'pump11' },
+      { url: wuhuapian1_url, key: 'wuhuapian1' },
+      { url: fan1_url, key: 'fan1' },
+      { url: pump2_url, key: 'pump2' },
+      { url: pump22_url, key: 'pump22' },
+      { url: wuhuapian2_url, key: 'wuhuapian2' },
+      { url: lamb2_url, key: 'lamb2' },
+      { url: pump3_url, key: 'pump3' },
+      { url: pump33_url, key: 'pump33' },
+      { url: wuhuapian3_url, key: 'wuhuapian3' },
+      { url: fan3_url, key: 'fan3' },
+      { url: pump4_url, key: 'pump4' },
+      { url: pump44_url, key: 'pump44' },
+      { url: wuhuapian4_url, key: 'wuhuapian4' },
+      { url: lamb4_url, key: 'lamb4' },
+    ];
+let ii=0
+    urls.forEach((item) => {
+      wx.request({
+        url: item.url,
+        method: 'GET',
+        header: {
+          'content-type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        success: (res) => {
+          if (res.statusCode === 200) {
+            ii++;
+            const value = res.data[item.key][0].value;
+            let v=parseInt(value)
+            console.log(value,ii,item.key);
+            if(v===1){
+              that.setData({
+                [`checked${ii}`]:true
+              })
+            }
+            else if(v===0){
+              that.setData({
+                [`checked${ii}`]:false
+              })
+            }
+            else if(item.key==='lamb2'){
+              that.setData({
+                slider1value:v
+              })
+            }
+            else{
+              that.setData({
+                slider2value:v
+              })
+            }
+            
+          } else {
+            console.error('Failed to fetch values:', res);
+          }
+        },
+        fail: (error) => {
+          console.error('Request failed:', error);
+        },
+      });
+    });
+  },
+
 });
+const pump1_url="https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/DEVICE/63720cd0-548f-11ef-add2-fd19fcae8edb/values/timeseries?keys=pump1&agg=NONE&limit=7&startTs=1721543883894&endTs=1724135883895&orderBy=DESC&_t=1724135883895"
+const pump11_url="https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/DEVICE/63720cd0-548f-11ef-add2-fd19fcae8edb/values/timeseries?keys=pump11&agg=NONE&limit=7&startTs=1721544822812&endTs=1724136822813&orderBy=DESC&_t=1724136822813"
+const pump3_url="https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/DEVICE/63720cd0-548f-11ef-add2-fd19fcae8edb/values/timeseries?keys=pump3&agg=NONE&limit=7&startTs=1721545882909&endTs=1724137882909&orderBy=DESC&_t=1724137882909"
+const pump33_url="https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/DEVICE/63720cd0-548f-11ef-add2-fd19fcae8edb/values/timeseries?keys=pump33&agg=NONE&limit=7&startTs=1721545927578&endTs=1724137927578&orderBy=DESC&_t=1724137927578"
+const fan1_url="https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/DEVICE/63720cd0-548f-11ef-add2-fd19fcae8edb/values/timeseries?keys=fan1&agg=NONE&limit=7&startTs=1721545967275&endTs=1724137967275&orderBy=DESC&_t=1724137967275"
+const fan3_url="https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/DEVICE/63720cd0-548f-11ef-add2-fd19fcae8edb/values/timeseries?keys=fan3&agg=NONE&limit=7&startTs=1721546041126&endTs=1724138041126&orderBy=DESC&_t=1724138041126"
+const wuhuapian1_url="https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/DEVICE/63720cd0-548f-11ef-add2-fd19fcae8edb/values/timeseries?keys=wuhuapian1&agg=NONE&limit=7&startTs=1721546097882&endTs=1724138097882&orderBy=DESC&_t=1724138097882"
+const wuhuapian3_url="https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/DEVICE/63720cd0-548f-11ef-add2-fd19fcae8edb/values/timeseries?keys=wuhuapian3&agg=NONE&limit=7&startTs=1721546191698&endTs=1724138191698&orderBy=DESC&_t=1724138191698"
+const pump2_url="https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/DEVICE/a5ac4170-5493-11ef-add2-fd19fcae8edb/values/timeseries?keys=pump2&agg=NONE&limit=7&startTs=1721546319572&endTs=1724138319572&orderBy=DESC&_t=1724138319572"
+const pump22_url="https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/DEVICE/a5ac4170-5493-11ef-add2-fd19fcae8edb/values/timeseries?keys=pump22&agg=NONE&limit=7&startTs=1721546362733&endTs=1724138362733&orderBy=DESC&_t=1724138362733"
+const pump4_url="https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/DEVICE/a5ac4170-5493-11ef-add2-fd19fcae8edb/values/timeseries?keys=pump4&agg=NONE&limit=7&startTs=1721546500568&endTs=1724138500568&orderBy=DESC&_t=1724138500568"
+const pump44_url="https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/DEVICE/a5ac4170-5493-11ef-add2-fd19fcae8edb/values/timeseries?keys=pump44&agg=NONE&limit=7&startTs=1721546470330&endTs=1724138470330&orderBy=DESC&_t=1724138470330"
+const wuhuapian2_url="https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/DEVICE/a5ac4170-5493-11ef-add2-fd19fcae8edb/values/timeseries?keys=wuhuapian2&agg=NONE&limit=7&startTs=1721546540113&endTs=1724138540113&orderBy=DESC&_t=1724138540113"
+const wuhuapian4_url="https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/DEVICE/a5ac4170-5493-11ef-add2-fd19fcae8edb/values/timeseries?keys=wuhuapian4&agg=NONE&limit=7&startTs=1721546566602&endTs=1724138566602&orderBy=DESC&_t=1724138566602"
+const lamb2_url="https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/DEVICE/a5ac4170-5493-11ef-add2-fd19fcae8edb/values/timeseries?keys=lamb2&agg=NONE&limit=7&startTs=1721546600392&endTs=1724138600392&orderBy=DESC&_t=1724138600393"
+const lamb4_url="https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/DEVICE/a5ac4170-5493-11ef-add2-fd19fcae8edb/values/timeseries?keys=lamb4&agg=NONE&limit=7&startTs=1721546649687&endTs=1724138649687&orderBy=DESC&_t=1724138649687"
+ 

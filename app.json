@@ -48,7 +48,8 @@
   },
   "usingComponents": {
     "cu-custom": "/style/colorui/components/cu-custom",
-    "van-switch": "/miniprogram_npm/@vant/weapp/switch/index"
+    "van-switch": "/miniprogram_npm/@vant/weapp/switch/index",
+    "van-action-sheet": "/miniprogram_npm/@vant/weapp/action-sheet/index"
   },
   "tabBar": {
     "color": "#9e9e9e",
