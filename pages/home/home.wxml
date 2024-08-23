@@ -69,7 +69,7 @@
     <text class=" title">天   气   状   况</text>
   </view>
 </view>
-<view class="card"  bindtap="navigate" data-url="/pages/operation/operation">
+<view class="card"  bindtap="navigate" data-url="/pkgB/pages/game/game">
   <view class="card-info">
     
     <!-- <p class="title">Magic Card</p> -->

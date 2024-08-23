@@ -1,4 +1,9 @@
+
 <view class="container">
+  <view class="btnfu">
+    <button class="btn" bindtap="navigate"><i class="animation"></i>按键化模式<i class="animation"></i>
+    </button>
+</view>
 <view class="tabbers">
   <view class="original {{san?'puff-out-center':''}}" 
         bindtouchstart="touchStart"
@@ -21,14 +26,14 @@
         bindtouchmove="touchMove1"
         bindtouchend="touchEnd1"
         style="position: absolute; text-align: center; width: {{hew1}}rpx; height:{{heh1}}rpx;display: block;left:{{posX1}}px;top:{{posY1}}px;">
-        <image class="imgs" src="../../icon/风扇.png" mode=""/>
+        <image class="imgs" src="../../icon/通风风扇.png" mode=""/>
   </view>
   <view wx:if="{{copyVisible1}}" 
         class="copy"
         bindtouchmove="copyTouchMove"
         bindtouchend="copyTouchEnd"
         style="position: absolute; text-align: center; width: 100rpx; height:100rpx;display: block;left:{{copyPosX1}}px;top:{{copyPosY1}}px;">
-        <image class="imgs" src="../../icon/风扇.png" mode=""/>
+        <image class="imgs" src="../../icon/通风风扇.png" mode=""/>
   </view>
   <!-- 2 -->
   <view class="original {{san2?'puff-out-center':''}}" 
@@ -36,14 +41,14 @@
         bindtouchmove="touchMove2"
         bindtouchend="touchEnd2"
         style="position: absolute; text-align: center; width: {{hew2}}rpx; height:{{heh2}}rpx;display: block;left:{{posX2}}px;top:{{posY2}}px;">
-        <image class="imgs" src="../../icon/喷雾.png" mode=""/>
+        <image class="imgs" src="../../icon/加湿器.png" mode=""/>
   </view>
   <view wx:if="{{copyVisible2}}" 
         class="copy"
         bindtouchmove="copyTouchMove"
         bindtouchend="copyTouchEnd"
         style="position: absolute; text-align: center; width: 100rpx; height:100rpx;display: block;left:{{copyPosX2}}px;top:{{copyPosY2}}px;">
-        <image class="imgs" src="../../icon/喷雾.png" mode=""/>
+        <image class="imgs" src="../../icon/加湿器.png" mode=""/>
   </view>
   <!-- 3 -->
   <view class="original {{san3?'puff-out-center':''}}" 
@@ -51,35 +56,41 @@
         bindtouchmove="touchMove3"
         bindtouchend="touchEnd3"
         style="position: absolute; text-align: center; width: {{hew3}}rpx; height:{{heh3}}rpx;display: block;left:{{posX3}}px;top:{{posY3}}px;">
-        <image class="imgs" src="../../icon/灯.png" mode=""/>
+        <image class="imgs" src="../../icon/调光灯.png" mode=""/>
   </view>
   <view wx:if="{{copyVisible3}}" 
         class="copy"
         bindtouchmove="copyTouchMove"
         bindtouchend="copyTouchEnd"
         style="position: absolute; text-align: center; width: 100rpx; height:100rpx;display: block;left:{{copyPosX3}}px;top:{{copyPosY3}}px;">
-        <image class="imgs" src="../../icon/灯.png" mode=""/>
+        <image class="imgs" src="../../icon/调光灯.png" mode=""/>
   </view>
 </view>
 
   <view class="area">
    
-  <view class="item card {{boxClass}}" style="background-image: linear-gradient(to right, #b1769f, #ebdce1);">
+  <view class="item card {{boxClass}}" style="background-image: linear-gradient(to right, #a5eca7, #cddc39);">
 
-
+    <!-- background-image: linear-gradient(to right, #4caf50, #cddc39); -->
       <image src="../../icon/草莓-01.png" class="imgg" bindtap="showch" mode=""/>
   </view>
-  <view class="item card {{boxClass1}}" style="background-image: linear-gradient(to right, #2196f3, #20c997);">
+  <view class="item card {{boxClass1}}" style="background-image: linear-gradient(to right, #a5eca7, #cddc39);">
     <image src="../../icon/草莓-01.png" class="imgg" bindtap="showch1" mode=""/>
   </view>
-  <view class="item card {{boxClass2}}" style="background-image: linear-gradient(to right, #4caf50, #cddc39);">
+  <view class="item card {{boxClass2}}" style="background-image: linear-gradient(to right, #a5eca7, #cddc39);">
     <image src="../../icon/草莓-01.png" class="imgg" bindtap="showch2" mode=""/>
   </view>
-  <view class="item card {{boxClass3}}" style="background-image: linear-gradient(to right, #ffeb3b, #ff9800);">
+  <view class="item card {{boxClass3}}" style="background-image: linear-gradient(to right, #a5eca7, #cddc39);">
     <image src="../../icon/草莓-01.png" class="imgg" bindtap="showch3" mode=""/>
   </view>
   </view>
   
+
+
+  <!-- <view class="imggg" style="margin-left: 25px;">
+  <image src="https://pic.rmb.bdstatic.com/bjh/down/8ba7c1bafbcc61a15ff2b88fcb9b8359.gif" mode=""/>
+  </view> -->
+
   <van-action-sheet
   show="{{show}}"
   actions="{{ actions }}"
@@ -95,7 +106,7 @@ bind:cancel="onClose"
   description="2号种植物"
   cancel-text="取消"
   bind:close="onClose"
-  bind:select="onSelect"
+  bind:select="onSelect1"
 bind:cancel="onClose"
 />
 <van-action-sheet
@@ -104,7 +115,7 @@ bind:cancel="onClose"
   description="3号种植物"
   cancel-text="取消"
   bind:close="onClose"
-  bind:select="onSelect"
+  bind:select="onSelect2"
 bind:cancel="onClose"
 />
 <van-action-sheet
@@ -113,8 +124,15 @@ bind:cancel="onClose"
   description="4号种植物"
   cancel-text="取消"
   bind:close="onClose"
-  bind:select="onSelect"
+  bind:select="onSelect3"
 bind:cancel="onClose"
 />
-
+<scroll-view class="cu-chat" style="overflow-y: scroll;" id="chatList" scroll-y="true" scroll-into-view="{{scrollIntoView}}">
+<view class="cu-item " >
+<view class="cu-avatar radius" style="background-image:url(https://pic.rmb.bdstatic.com/bjh/down/8ba7c1bafbcc61a15ff2b88fcb9b8359.gif); border-radius: 50%;" ></view>
+  <view class="main">
+      <view class="content  shadow "  bindtap="onDelete" >
+        <text selectable="true">{{tishi}}</text>
+      </view>
+    </view></view></scroll-view>
 </view>

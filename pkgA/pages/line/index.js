@@ -127,7 +127,7 @@ Page({
     const entityType = 'DEVICE';
     const entityId = '71771400-1106-11ef-add2-fd19fcae8edb';
     wx.request({
-      url: `https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/${entityType}/${entityId}/values/timeseries?keys=soild_temp_data,soild_hum_data&limit=7&startTs=1718208000000&endTs=1781285384219`,
+      url: `https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/${entityType}/${entityId}/values/timeseries?keys=soild_temp_data,soild_hum_data&limit=7&startTs=1718208000000&endTs=1881285384219`,
       method: 'GET',
       header: {
         'content-type': 'application/x-www-form-urlencoded',

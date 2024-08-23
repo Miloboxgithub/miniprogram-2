@@ -1,6 +1,8 @@
 const app = getApp();
 Page({
   data: {
+    scrollIntoView: '',
+    tishi:'请滑动图标至对应区域进行开启设备命令，或点击草莓进行关闭设备操作',
       posX: 20, // 初始位置
       posY: 20, // 初始位置
       posX1: 110, // 初始位置
@@ -50,56 +52,13 @@ Page({
       show2: false,
       show3: false,
     actions: [
-      {
-        name: '选项',
-      },
-      {
-        name: '选项',
-      },
-      {
-        name: '选项',
-        subname: '描述信息',
-        openType: 'share',
-      },
+      
     ],
     actions1: [
-      {
-        name: '选项',
-      },
-      {
-        name: '选项',
-      },
-      {
-        name: '选项',
-        subname: '描述信息',
-        openType: 'share',
-      },
     ],
     actions2: [
-      {
-        name: '选项',
-      },
-      {
-        name: '选项',
-      },
-      {
-        name: '选项',
-        subname: '描述信息',
-        openType: 'share',
-      },
     ],
     actions3: [
-      {
-        name: '选项',
-      },
-      {
-        name: '选项',
-      },
-      {
-        name: '选项',
-        subname: '描述信息',
-        openType: 'share',
-      },
     ],
   },
 onLoad(){
@@ -112,9 +71,104 @@ onClose() {
     show3: false });
   console.log(123)
 },
-
+navigate: function () {
+  wx.navigateTo({url: "/pages/operation/operation"});
+},
 onSelect(event) {
-  console.log(event.detail);
+  console.log(event.detail.name);
+  this.setData({
+    actions: this.data.actions.filter(item => item.name != event.detail.name)
+  });
+  if(event.detail.name=='风扇'){
+    this.poststatus(0,'fan1')
+    this.setData({
+      tishi:'太棒了，你成功关闭了1号风扇'
+    })
+  }
+  else if(event.detail.name=='水泵'){
+    this.poststatus(0,'pump1')
+    this.setData({
+      tishi:'太棒了，你成功关闭了1号水泵'
+    })
+  }
+  else if(event.detail.name=='雾化片'){
+    this.poststatus(0,'wuhuapian1')
+    this.setData({
+      tishi:'太棒了，你成功关闭了1号雾化片'
+    })
+  }
+},
+onSelect1(event) {
+
+  this.setData({
+    actions1: this.data.actions1.filter(item => item.name != event.detail.name)
+  });
+  if(event.detail.name=='灯带'){
+    this.poststatus1(0,'lamb2')
+    this.setData({
+      tishi:'太棒了，你成功关闭了2号灯带'
+    })
+  }
+  else if(event.detail.name=='水泵'){
+    this.poststatus1(0,'pump2')
+    this.setData({
+      tishi:'太棒了，你成功关闭了2号水泵'
+    })
+  }
+  else if(event.detail.name=='雾化片'){
+    this.poststatus1(0,'wuhuapian2')
+    this.setData({
+      tishi:'太棒了，你成功关闭了2号雾化片'
+    })
+  }
+},
+onSelect2(event) {
+
+  this.setData({
+    actions2: this.data.actions2.filter(item => item.name != event.detail.name)
+  });
+  if(event.detail.name=='风扇'){
+    this.poststatus(0,'fan3')
+    this.setData({
+      tishi:'太棒了，你成功关闭了3号风扇'
+    })
+  }
+  else if(event.detail.name=='水泵'){
+    this.poststatus(0,'pump3')
+    this.setData({
+      tishi:'太棒了，你成功关闭了3号水泵'
+    })
+  }
+  else if(event.detail.name=='雾化片'){
+    this.poststatus(0,'wuhuapian3')
+    this.setData({
+      tishi:'太棒了，你成功关闭了3号雾化片'
+    })
+  }
+},
+onSelect3(event) {
+  
+  this.setData({
+    actions3: this.data.actions3.filter(item => item.name != event.detail.name)
+  });
+  if(event.detail.name=='灯带'){
+    this.poststatus1(0,'lamb4')
+    this.setData({
+      tishi:'太棒了，你成功关闭了4号灯带'
+    })
+  }
+  else if(event.detail.name=='水泵'){
+    this.poststatus1(0,'pump4')
+    this.setData({
+      tishi:'太棒了，你成功关闭了4号水泵'
+    })
+  }
+  else if(event.detail.name=='雾化片'){
+    this.poststatus1(0,'wuhuapian4')
+    this.setData({
+      tishi:'太棒了，你成功关闭了4号雾化片'
+    })
+  }
 },
 showch:function () {
   this.setData({
@@ -276,25 +330,44 @@ touchMove3: function (e) {
       console.log("== touchEnd ==")
       if (!this.data.touch) return;
       if(parseInt(this.data.posY)>100&&parseInt(this.data.posY)<250&&parseInt(this.data.posX)<140){
+        const aa={name:'水泵'}
+        this.data.actions.push(aa)
         this.setData({
           boxClass:'shake',
+          actions:this.data.actions,
+          tishi:'太好了，你打开了1号田的水泵'
         })
+        this.poststatus(1,'pump1')
       }
       if(parseInt(this.data.posY)>100&&parseInt(this.data.posY)<250&&parseInt(this.data.posX)>180&&parseInt(this.data.posX)<320){
-        console.log('down')
+        const aa={name:'水泵'}
+        this.data.actions1.push(aa)
         this.setData({
-          boxClass1:'shake'
+          boxClass1:'shake',
+          actions1:this.data.actions1,
+          tishi:'太好了，你打开了2号田的水泵'
         })
+        this.poststatus1(1,'pump2')
       }
       if(parseInt(this.data.posY)>280&&parseInt(this.data.posY)<430&&parseInt(this.data.posX)>0&&parseInt(this.data.posX)<140){
+        const aa={name:'水泵'}
+        this.data.actions2.push(aa)
         this.setData({
-          boxClass2:'shake'
+          boxClass2:'shake',
+          actions2:this.data.actions2,
+          tishi:'太好了，你打开了3号田的水泵'
         })
+        this.poststatus(1,'pump3')
       }
       if(parseInt(this.data.posY)>280&&parseInt(this.data.posY)<430&&parseInt(this.data.posX)>180&&parseInt(this.data.posX)<320){
+        const aa={name:'水泵'}
+        this.data.actions3.push(aa)
         this.setData({
-          boxClass3:'shake'
+          boxClass3:'shake',
+          actions3:this.data.actions3,
+          tishi:'太好了，你打开了4号田的水泵'
         })
+        this.poststatus1(1,'pump4')
       }
       this.setData({
         san:true,
@@ -321,27 +394,41 @@ touchMove3: function (e) {
     console.log("== touchEnd1 ==")
     if (!this.data.touch) return;
     if(parseInt(this.data.posY1)>100&&parseInt(this.data.posY1)<250&&parseInt(this.data.posX1)<140){
-      console.log('hhfdhg')
+      const aa={name:'风扇'}
+        this.data.actions.push(aa)
       this.setData({
-        boxClass:'shake'
+        boxClass:'shake',
+        actions:this.data.actions,
+        tishi:'太好了，你打开了1号田的风扇'
       })
+      this.poststatus(1,'fan1')
     }
-    if(parseInt(this.data.posY1)>100&&parseInt(this.data.posY1)<250&&parseInt(this.data.posX1)>180&&parseInt(this.data.posX1)<320){
-      console.log('down')
-      this.setData({
-        boxClass1:'shake'
-      })
-    }
+    // if(parseInt(this.data.posY1)>100&&parseInt(this.data.posY1)<250&&parseInt(this.data.posX1)>180&&parseInt(this.data.posX1)<320){
+    //   const aa={name:'风扇'}
+    //     this.data.actions1.push(aa)
+    //   this.setData({
+    //     boxClass1:'shake',
+    //     actions1:this.data.actions1
+    //   })
+    // }
     if(parseInt(this.data.posY1)>280&&parseInt(this.data.posY1)<430&&parseInt(this.data.posX1)>0&&parseInt(this.data.posX1)<140){
+      const aa={name:'风扇'}
+        this.data.actions2.push(aa)
       this.setData({
-        boxClass2:'shake'
+        boxClass2:'shake',
+        actions2:this.data.actions2,
+        tishi:'太好了，你打开了3号田的风扇'
       })
+      this.poststatus(1,'fan3')
     }
-    if(parseInt(this.data.posY1)>280&&parseInt(this.data.posY1)<430&&parseInt(this.data.posX1)>180&&parseInt(this.data.posX1)<320){
-      this.setData({
-        boxClass3:'shake'
-      })
-    }
+    // if(parseInt(this.data.posY1)>280&&parseInt(this.data.posY1)<430&&parseInt(this.data.posX1)>180&&parseInt(this.data.posX1)<320){
+    //   const aa={name:'风扇'}
+    //     this.data.actions3.push(aa)
+    //   this.setData({
+    //     boxClass3:'shake',
+    //     actions3:this.data.actions3
+    //   })
+    // }
     this.setData({
         touch: false,
         chaX1: 0,
@@ -366,26 +453,44 @@ touchEnd2: function (e) {
   console.log("== touchEnd2 ==")
   if (!this.data.touch) return;
   if(parseInt(this.data.posY2)>100&&parseInt(this.data.posY2)<250&&parseInt(this.data.posX2)<140){
-    console.log('hhfdhg')
+    const aa={name:'雾化片'}
+        this.data.actions.push(aa)
     this.setData({
-      boxClass:'shake'
+      boxClass:'shake',
+      actions:this.data.actions,
+      tishi:'太好了，你打开了1号田的雾化片'
     })
+    this.poststatus(1,'wuhuapian1')
   }
   if(parseInt(this.data.posY2)>100&&parseInt(this.data.posY2)<250&&parseInt(this.data.posX2)>180&&parseInt(this.data.posX2)<320){
-    console.log('down')
+    const aa={name:'雾化片'}
+        this.data.actions1.push(aa)
     this.setData({
-      boxClass1:'shake'
-    })
+      boxClass1:'shake',
+      actions1:this.data.actions1,
+      tishi:'太好了，你打开了2号田的雾化片'
+    }) 
+    this.poststatus1(1,'wuhuapian2')
   }
   if(parseInt(this.data.posY2)>280&&parseInt(this.data.posY2)<430&&parseInt(this.data.posX2)>0&&parseInt(this.data.posX2)<140){
+    const aa={name:'雾化片'}
+        this.data.actions2.push(aa)
     this.setData({
-      boxClass2:'shake'
+      boxClass2:'shake',
+      actions2:this.data.actions2,
+      tishi:'太好了，你打开了3号田的雾化片'
     })
+    this.poststatus(1,'wuhuapian3')
   }
   if(parseInt(this.data.posY2)>280&&parseInt(this.data.posY2)<430&&parseInt(this.data.posX2)>180&&parseInt(this.data.posX2)<320){
+    const aa={name:'雾化片'}
+        this.data.actions3.push(aa)
     this.setData({
-      boxClass3:'shake'
+      boxClass3:'shake',
+      actions3:this.data.actions3,
+      tishi:'太好了，你打开了4号田的雾化片'
     })
+    this.poststatus1(1,'wuhuapian4')
   }
   this.setData({
     san2:true,
@@ -411,27 +516,41 @@ touchEnd2: function (e) {
 touchEnd3: function (e) {
   console.log("== touchEnd3 ==")
   if (!this.data.touch) return;
-  if(parseInt(this.data.posY3)>100&&parseInt(this.data.posY3)<250&&parseInt(this.data.posX3)<140){
-    console.log('hhfdhg')
-    this.setData({
-      boxClass:'shake'
-    })
-  }
+  // if(parseInt(this.data.posY3)>100&&parseInt(this.data.posY3)<250&&parseInt(this.data.posX3)<140){
+  //   const aa={name:'灯带'}
+  //       this.data.actions.push(aa)
+  //   this.setData({
+  //     boxClass:'shake',
+  //     actions:this.data.actions
+  //   })
+  // }
   if(parseInt(this.data.posY3)>100&&parseInt(this.data.posY3)<250&&parseInt(this.data.posX3)>180&&parseInt(this.data.posX3)<320){
-    console.log('down')
+    const aa={name:'灯带'}
+        this.data.actions1.push(aa)
     this.setData({
-      boxClass1:'shake'
+      boxClass1:'shake',
+      actions1:this.data.actions1,
+      tishi:'太好了，你打开了2号田的灯带'
     })
+    this.poststatus1(150,'lamb2')
   }
-  if(parseInt(this.data.posY3)>280&&parseInt(this.data.posY3)<430&&parseInt(this.data.posX3)>0&&parseInt(this.data.posX3)<140){
-    this.setData({
-      boxClass2:'shake'
-    })
-  }
+  // if(parseInt(this.data.posY3)>280&&parseInt(this.data.posY3)<430&&parseInt(this.data.posX3)>0&&parseInt(this.data.posX3)<140){
+  //   const aa={name:'灯带'}
+  //       this.data.actions2.push(aa)
+  //   this.setData({
+  //     boxClass2:'shake',
+  //     actions2:this.data.actions2
+  //   })
+  // }
   if(parseInt(this.data.posY3)>280&&parseInt(this.data.posY3)<430&&parseInt(this.data.posX3)>180&&parseInt(this.data.posX3)<320){
+    const aa={name:'灯带'}
+        this.data.actions3.push(aa)
     this.setData({
-      boxClass3:'shake'
+      boxClass3:'shake',
+      actions3:this.data.actions3,
+      tishi:'太好了，你打开了4号田的灯带'
     })
+    this.poststatus1(e.detail.value,'lamb4')
   }
   this.setData({
       touch: false,

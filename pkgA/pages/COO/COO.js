@@ -99,7 +99,7 @@ getOption: function () {
   const entityId='166f1ad0-2ca9-11ef-add2-fd19fcae8edb'
   const entityType = 'DEVICE';
   wx.request({
-    url: `https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/${entityType}/${entityId}/values/timeseries?keys=CO2_data&limit=7&startTs=1718208000000&endTs=1781285384219`,
+    url: `https://www.aiotcomm.com.cn:18888/api/plugins/telemetry/${entityType}/${entityId}/values/timeseries?keys=CO2_data&limit=7&startTs=1718208000000&endTs=1881285384219`,
     method: 'GET',
     header: {
       'content-type': 'application/x-www-form-urlencoded',

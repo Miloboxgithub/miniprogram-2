@@ -1,9 +1,16 @@
 <cu-custom bgColor="bg-gradual-green"  isBack="{{true}}"><view slot="backText" >返回</view><view slot="content"></view></cu-custom>
 
 
-<view class="header" style="margin-bottom: 10px;">
-<!-- <view class="th">执行器设备</view> -->
-<!-- <view class="divider"></view> -->
+<!-- <view class="header" style="margin-bottom: 10px;">
+<view class="th">执行器设备</view>
+<view class="divider"></view>
+<view class="qiehuan"></view>
+</view> -->
+<view class=" flex flex-direction" style="padding: 5px;">
+  <view class="btnfu">
+    <button class="btn" bindtap="navigate"><i class="animation"></i>图形化模式<i class="animation"></i>
+    </button>
+</view>
 </view>
 <view class="device-status" >
     <view class="left">
@@ -115,7 +122,7 @@
         设备ID:2
       </view> -->
     <view class="cen">
-      <image src="../../asset/灯.svg" style="height: 30px; width: 30px;" mode=""/>
+      <image src="../../asset/水泵.svg" style="height: 30px; width: 30px;" mode=""/>
         <view class="device-name">2号田-水泵2</view>
         
     
